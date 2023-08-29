@@ -50,9 +50,11 @@ module.exports = Promise.resolve()
     // Middleware 4 -
     // it is a convenient handle file uploads in your Express app
     // It simplifies the process of accepting files sent as part of a multipart/form-data request.
-    app.use(fileUpload({
-      useTempFiles: true,
-    }));
+    app.use(
+      fileUpload({
+        useTempFiles: true,
+      })
+    );
     // API routes :
     app.use("/developers", router.developerRouter);
     app.use("/projects", router.projectRouter);
@@ -79,7 +81,7 @@ module.exports = Promise.resolve()
       if (error) {
         console.log("Server is unable to start due to error : ", error);
       } else {
-        console.log("Server has started at port ----> 8000");
+        console.log(`Server started at http://localhost:8000`);
       }
     });
     // ************* returning app is essential. Without it the promise will have nothing to work on for testing the API.

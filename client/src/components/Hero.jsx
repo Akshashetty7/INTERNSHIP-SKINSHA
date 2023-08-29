@@ -24,12 +24,12 @@ function Hero() {
     >
       {/* ------------- Background Gradient ------------ */}
       <div className="flex flex-row gap-0 z-0">
-        <div className="gradient" />
+        <div className="gradient   bg-yellow-900" />
       </div>
 
       {/* ------------- Milestone ------------ */}
 
-      <div
+      {/* <div
         className="flex flex-row px-2 border items-center justify-center animate-bounce border-accent rounded-full text-gray-700 text-md z-10"
       >
         <MdCelebration className="mr-2" />
@@ -37,38 +37,37 @@ function Hero() {
         {' '}
         {projects.length}
         + projects on the platform.
-      </div>
+      </div> */}
 
       {/* ------------- Headings ------------ */}
 
       <div className="gap-0 z-[1]">
         <h1
-          className=" text-gray-900 text-center text-4xl md:text-6xl font-semibold"
+          className=" text-yellow-800 text-center text-2xl md:text-2xl font-semibold"
         >
-          More than listing
+        DISCOVER YOUR BEST SKIN EVER
         </h1>
         <h1
-          className=" blue-gradient text-center text-4xl md:text-6xl font-semibold"
+          className=" blue-gradient text-center text-3xl md:text-3xl font-semibold  text-yellow-700"
         >
-          Complete Freelancing Platform
+          WELCOME TO THE SKIN-SHA UNIVERSE
         </h1>
       </div>
 
       {/* ------------- SubHeading ------------ */}
 
-      <p className="my-3 text-center md:text-2xl text-xl text-gray-700">
-        IdeaBox is a project listing platform that
-        {' '}
-        <span className="text-accent font-semibold">&quot;Connects&quot;</span>
-        {' '}
-        <br />
-        businesses with freelancers helping them grow together.
+      <p className="my-3 text-center md:text-2xl text-xl text-yellow-600">
+      We help you choose the best skincare for your needs.
+      ,<br/> We educate users
+          about skincare ingredients, 
+          <br/>provides UV protection advice, and
+          connects with professionals for consultations.<br/>
       </p>
       <div className="flex my-8 items-center justify-center gap-10 z-[1]">
         <div className="flex justify-between  items-center cursor-pointer bg-accent hover:bg-accent/50 rounded-lg text-white font-semibold text-center">
           <a
             href="/register"
-            className="flex p-3 md:p-4 items-center justify-center"
+            className="flex p-3 md:p-4 items-center justify-center bg-yellow-700"
           >
             Start your journey
             {' '}
@@ -78,7 +77,7 @@ function Hero() {
 
         {/* ------------- Demo Video ------------ */}
 
-        <a
+        {/* <a
           href="/"
           className="flex p-0 gap-3 items-center justify-center"
         >
@@ -87,7 +86,7 @@ function Hero() {
             <p className="text-accent">Watch demo</p>
             <p>2 min</p>
           </div>
-        </a>
+        </a> */}
       </div>
       {/* ------------- Screenshots ------------ */}
 
