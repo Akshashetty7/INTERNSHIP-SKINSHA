@@ -1,3 +1,8 @@
+// deleted the about us makers
+
+
+
+
 /* eslint-disable react/destructuring-assignment */
 import { AiFillLinkedin, AiFillGithub } from 'react-icons/ai';
 import { MdEmail } from 'react-icons/md';

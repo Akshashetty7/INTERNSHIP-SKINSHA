@@ -5,7 +5,7 @@
 @layer components {
 	.header {
 		@apply antialiased bg-transparent w-full z-50 shadow-sm max-w-[2520px]
-				 mx-auto xl:px-20 md:px-10 sm:px-2 px-4 py-4 font-sans fixed
+				 mx-auto xl:px-20 md:px-10 sm:px-2 px-4 py-4 font-playfair fixed
 				  flex items-center justify-between gap-3 md:gap-0 font-semibold transition-all;
 	}
 	.purple-gradient {
@@ -72,9 +72,11 @@
 
 :root{
 	--toastify-color-success: #6c47ff;
+	font-family: 'Playfair Display', serif;
 }
 
 html {
+	font-family: 'Playfair Display', serif;
 	scroll-behavior: smooth;
 	padding: 0%;
 	background-color: white;

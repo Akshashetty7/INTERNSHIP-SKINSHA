@@ -1,9 +1,9 @@
-import AppFeatures from './AppFeatures';
-import FeaturedProjects from './FeaturedProjects';
+import AppFeatures from "./AppFeatures";
+import FeaturedProjects from "./FeaturedProjects";
 
 function Featured() {
   return (
-    <div className="flex items-center justify-center flex-col text-white bg-bg-color relative px-5 z-[1] py-24 gap-24 md:py-48 md:gap-32 lg:py-60 lg:gap-40">
+    <div className="flex items-center justify-center flex-col text-white bg-orange-200 relative px-5 z-[1] gap-12 md:py-32 md:gap-32 lg:py-60 lg:gap-40">
       {/* ------------- Features ------------ */}
 
       <AppFeatures />
