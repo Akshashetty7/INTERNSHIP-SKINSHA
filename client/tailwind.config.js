@@ -5,7 +5,8 @@ export default {
   theme: {
     fontFamily:{
       playfair :["Playfair Display", "serif"],
-      poppins :["Poppins", "sans-serif"]
+      poppins :["Poppins", "sans-serif"],
+      DancingScript:["Dancing Script","cursive"],
     },
     extend: {
       colors: {

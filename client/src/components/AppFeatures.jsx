@@ -24,7 +24,7 @@ export default function AppFeatures() {
       {/* ------------- Features Card ------------ */}
 
       <div className="flex flex-col md:flex-row my-8 gap-5">
-        <div className="flex flex-col gap-4 bg-[#a16207] rounded-xl border border-slate-800 p-5">
+        <div className="flex flex-col gap-4 bg-[#a16207] rounded-xl border border-slate-800 p-5  w-4/5">
           <h2 className="font-semibold text-xl">Tailored Beauty Solutions</h2>
           <p className="opacity-75">
             At Skin-Sha, we understand that your skin is unique. That's why we
@@ -33,7 +33,7 @@ export default function AppFeatures() {
             your skincare goals effortlessly
           </p>
         </div>
-        <div className="flex flex-col gap-4 bg-[#a16207] rounded-xl border border-slate-800 p-5">
+        <div className="flex flex-col gap-4 bg-[#a16207] rounded-xl border border-slate-800 p-5  w-4/5">
           <h2 className="font-semibold text-xl">Your Skin's Best Friend</h2>
           <p className="opacity-75">
             Why Skin-Sha? Because we're your skincare ally. Our platform
@@ -42,7 +42,7 @@ export default function AppFeatures() {
             guesswork and hello to a more radiant you.
           </p>
         </div>
-        <div className="flex flex-col gap-4 bg-[#a16207] rounded-xl border border-slate-800 p-5">
+        <div className="flex flex-col gap-4 bg-[#a16207] rounded-xl border border-slate-800 p-5   w-4/5">
           <h2 className="font-semibold text-xl">Your Skin, Your Rules</h2>
           <p className="opacity-75">
             Skin-Sha empowers you to take control of your skincare journey. With
