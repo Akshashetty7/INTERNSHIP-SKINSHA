@@ -1,6 +1,7 @@
+// in categories u will find
 import { useContext, useEffect, useState } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 import ProjectList from "../components/ProjectList";
 import FilterButton from "../components/navbar/FilterButton";
 // import loading from "../../../../../../../../SVG/loading.svg";
@@ -46,7 +47,7 @@ function ProjectListings() {
     const searchTitle = `?title=${searchInput.searchString}`;
     const response = await fetch(
       `${import.meta.env.VITE_API_URL}/projects${searchTitle}`,
-      { mode: "cors" },
+      { mode: "cors" }
     );
     const fetchedProjects = await response.json();
     setProjects(fetchedProjects.data);
@@ -67,8 +68,10 @@ function ProjectListings() {
     await setProgress(10);
 
     const response = await fetch(
-      `${import.meta.env.VITE_API_URL}/projects?bookmark=${localStorage.getItem("isDev")}`,
-      { mode: "cors" },
+      `${import.meta.env.VITE_API_URL}/projects?bookmark=${localStorage.getItem(
+        "isDev"
+      )}`,
+      { mode: "cors" }
     );
     await setProgress(30);
     const fetchedProjects = await response.json();
@@ -76,7 +79,8 @@ function ProjectListings() {
     await setProgress(50);
     // alert(`${fetchedProjects.message}`);
     toast.success(`${fetchedProjects.message}`, {
-      position: toast.POSITION.TOP_CENTER, autoClose: 2000,
+      position: toast.POSITION.TOP_CENTER,
+      autoClose: 2000,
     });
     await setProgress(1000);
   };
@@ -90,7 +94,8 @@ function ProjectListings() {
 
     await setProgress(30);
     toast.success(`${message}`, {
-      position: toast.POSITION.TOP_CENTER, autoClose: 2000,
+      position: toast.POSITION.TOP_CENTER,
+      autoClose: 2000,
     });
     await setProgress(50);
     SetsaveBtnState(false);
@@ -140,11 +145,23 @@ function ProjectListings() {
           </h1>
           <div className="flex mt-6 w-full justify-between border-b ">
             <div className="tabs gap-4 pl-6">
-              <button type="button" className={`tab ${bestMatchesBtnState ? "tab-bordered tab-active" : ""}`} onClick={handleBestMatches}>
+              <button
+                type="button"
+                className={`tab ${
+                  bestMatchesBtnState ? "tab-bordered tab-active" : ""
+                }`}
+                onClick={handleBestMatches}
+              >
                 Best Matches
               </button>
               {localStorage.getItem("isDev") ? (
-                <button type="button" className={`tab ${saveBtnState ? "tab-bordered tab-active" : ""}`} onClick={handleSaved}>
+                <button
+                  type="button"
+                  className={`tab ${
+                    saveBtnState ? "tab-bordered tab-active" : ""
+                  }`}
+                  onClick={handleSaved}
+                >
                   Saved Jobs
                 </button>
               ) : null}

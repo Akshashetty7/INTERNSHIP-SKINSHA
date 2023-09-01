@@ -1,3 +1,7 @@
+
+
+// in Brands u will find
+
 import { useEffect, useState } from "react";
 import CompanyList from "../components/CompanyList";
 import FilterButton from "../components/navbar/FilterButton";

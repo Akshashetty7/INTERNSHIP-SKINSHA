@@ -26,14 +26,14 @@ function RegisterDeveloper() {
     password: '',
     phone: '',
     city: '',
-    technical_role: '',
-    qualification: '',
-    skills: "",
+    // technical_role: '',
+    // qualification: '',
+    // skills: "",
     photo: null,
-    openToWork: false,
-    linkedin: "",
-    github: "",
-    about: "",
+    // openToWork: false,
+    // linkedin: "",
+    // github: "",
+    // about: "",
   });
   const [validationErrors, setValidationErrors] = useState({
     fname: '',
@@ -42,14 +42,14 @@ function RegisterDeveloper() {
     password: '',
     phone: '',
     city: '',
-    technical_role: '',
-    qualification: '',
-    skills: "",
+    // technical_role: '',
+    // qualification: '',
+    // skills: "",
     photo: null,
-    openToWork: false,
-    linkedin: "",
-    github: "",
-    about: "",
+    // openToWork: false,
+    // linkedin: "",
+    // github: "",
+    // about: "",
   });
   const validateFname = (name) => {
     if (name.length === 0) {
@@ -110,33 +110,33 @@ function RegisterDeveloper() {
       setValidationErrors((prevErrors) => ({ ...prevErrors, phone: "" }));
     }
   };
-  const validateSkills = (skills) => {
-    if (skills.length === 0) {
-      setValidationErrors((prevErrors) => ({ ...prevErrors, skills: "" }));
-    } else if (!/^([a-zA-Z.]+, )*[a-zA-Z.]+$/.test(skills)) {
-      setValidationErrors((prevErrors) => ({ ...prevErrors, skills: "Please provide a valid input with space comma separation." }));
-    } else {
-      setValidationErrors((prevErrors) => ({ ...prevErrors, skills: "" }));
-    }
-  };
-  const validateLinkedin = (linkedin) => {
-    if (linkedin.length === 0) {
-      setValidationErrors((prevErrors) => ({ ...prevErrors, linkedin: "" }));
-    } else if (!/^(https?:\/\/(www\.)?|http:\/\/(www\.)?)([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(\/[^\s]*)?$/.test(linkedin)) {
-      setValidationErrors((prevErrors) => ({ ...prevErrors, linkedin: "Please provide a valid URL." }));
-    } else {
-      setValidationErrors((prevErrors) => ({ ...prevErrors, linkedin: "" }));
-    }
-  };
-  const validateGithub = (github) => {
-    if (github.length === 0) {
-      setValidationErrors((prevErrors) => ({ ...prevErrors, github: "" }));
-    } else if (!/^(https?:\/\/(www\.)?|http:\/\/(www\.)?)([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(\/[^\s]*)?$/.test(github)) {
-      setValidationErrors((prevErrors) => ({ ...prevErrors, github: "Please provide a valid URL." }));
-    } else {
-      setValidationErrors((prevErrors) => ({ ...prevErrors, github: "" }));
-    }
-  };
+  // const validateSkills = (skills) => {
+  //   if (skills.length === 0) {
+  //     setValidationErrors((prevErrors) => ({ ...prevErrors, skills: "" }));
+  //   } else if (!/^([a-zA-Z.]+, )*[a-zA-Z.]+$/.test(skills)) {
+  //     setValidationErrors((prevErrors) => ({ ...prevErrors, skills: "Please provide a valid input with space comma separation." }));
+  //   } else {
+  //     setValidationErrors((prevErrors) => ({ ...prevErrors, skills: "" }));
+  //   }
+  // };
+  // const validateLinkedin = (linkedin) => {
+  //   if (linkedin.length === 0) {
+  //     setValidationErrors((prevErrors) => ({ ...prevErrors, linkedin: "" }));
+  //   } else if (!/^(https?:\/\/(www\.)?|http:\/\/(www\.)?)([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(\/[^\s]*)?$/.test(linkedin)) {
+  //     setValidationErrors((prevErrors) => ({ ...prevErrors, linkedin: "Please provide a valid URL." }));
+  //   } else {
+  //     setValidationErrors((prevErrors) => ({ ...prevErrors, linkedin: "" }));
+  //   }
+  // };
+  // const validateGithub = (github) => {
+  //   if (github.length === 0) {
+  //     setValidationErrors((prevErrors) => ({ ...prevErrors, github: "" }));
+  //   } else if (!/^(https?:\/\/(www\.)?|http:\/\/(www\.)?)([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(\/[^\s]*)?$/.test(github)) {
+  //     setValidationErrors((prevErrors) => ({ ...prevErrors, github: "Please provide a valid URL." }));
+  //   } else {
+  //     setValidationErrors((prevErrors) => ({ ...prevErrors, github: "" }));
+  //   }
+  // };
 
   const updateFormValue = (field, value) => {
     setFormData({ ...formData, [field]: value });
@@ -160,7 +160,7 @@ function RegisterDeveloper() {
     }
   };
 
-  const steps = ['Login Details', 'Personal Details', 'Review'];
+  const steps = ['Login Details', 'Personal Details'];
 
   const displayStep = (step) => {
     switch (step) {
@@ -182,15 +182,15 @@ function RegisterDeveloper() {
             updateFormValue={updateFormValue}
           />
         );
-      case 3:
-        return (
-          <Final
-            formData={formData}
-            setFormData={setFormData}
-            image={image}
-            setImage={setImage}
-          />
-        );
+      // case 3:
+      //   return (
+      //     <Final
+      //       formData={formData}
+      //       setFormData={setFormData}
+      //       image={image}
+      //       setImage={setImage}
+      //     />
+      //   );
       default:
         return 0;
     }
@@ -244,35 +244,35 @@ function RegisterDeveloper() {
       bodyData.append('email', formData.email);
       bodyData.append('password', formData.password);
       bodyData.append('phone', formData.phone);
-      if (formData.qualification) {
-        bodyData.append('qualification', formData.qualification);
-      }
-      if (formData.skills) {
-        // converting input string to array
-        const skillsArray = formData.skills.split(", ");
-        // appending each array element to a separate form-data key as sending array in form-data type is tricky
-        skillsArray.forEach((skill) => {
-          bodyData.append('skills', skill);
-        });
-      }
+      // if (formData.qualification) {
+      //   bodyData.append('qualification', formData.qualification);
+      // }
+      // if (formData.skills) {
+        
+      //   const skillsArray = formData.skills.split(", ");
+        
+      //   skillsArray.forEach((skill) => {
+      //     bodyData.append('skills', skill);
+      //   });
+      // }
       if (formData.city) {
         bodyData.append('city', formData.city);
       }
-      if (formData.technical_role) {
-        bodyData.append('technical_role', formData.technical_role);
-      }
-      if (formData.openToWork) {
-        bodyData.append('openToWork', formData.openToWork);
-      }
-      if (formData.linkedin) {
-        bodyData.append('linkedin', formData.linkedin);
-      }
-      if (formData.github) {
-        bodyData.append('github', formData.github);
-      }
-      if (formData.about) {
-        bodyData.append('about', formData.about);
-      }
+      // if (formData.technical_role) {
+      //   bodyData.append('technical_role', formData.technical_role);
+      // }
+      // if (formData.openToWork) {
+      //   bodyData.append('openToWork', formData.openToWork);
+      // }
+      // if (formData.linkedin) {
+      //   bodyData.append('linkedin', formData.linkedin);
+      // }
+      // if (formData.github) {
+      //   bodyData.append('github', formData.github);
+      // }
+      // if (formData.about) {
+      //   bodyData.append('about', formData.about);
+      // }
       if (formData.photo) {
         bodyData.append('photo', formData.photo);
       }

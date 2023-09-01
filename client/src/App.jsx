@@ -49,7 +49,7 @@ function App() {
 
           {/* -------------Dev Profile----------------- */}
           <Route path="/profile" element={<Profile />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<DevLogin />} />
           <Route path="/login/developer" element={<DevLogin />} />
           <Route path="/login/company" element={<OrgLogin />} />
           <Route

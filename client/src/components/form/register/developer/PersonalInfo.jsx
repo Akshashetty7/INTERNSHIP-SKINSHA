@@ -1,15 +1,20 @@
-import React from 'react';
+// personal details
+
+import React from "react";
 
 function PersonalInfo({
-  formData, setFormData, validationErrors, updateFormValue,
+  formData,
+  setFormData,
+  validationErrors,
+  updateFormValue,
 }) {
-//   2.Form
-// Phone
-// City
-// Qualification
-// Technical role
-// Skills
-// OpenToWork
+  //   2.Form
+  // Phone
+  // City
+  // Qualification
+  // Technical role
+  // Skills
+  // OpenToWork
 
   return (
     <div className="w-full mt-6 mr-0 mb-0 ml-0 relative space-y-8 h-[40vh] overflow-y-scroll scroll-smooth z-100 scrollbar p-3">
@@ -24,18 +29,17 @@ function PersonalInfo({
           required
           value={formData.phone}
           onChange={(event) => updateFormValue("phone", event.target.value)}
-          className={`border placeholder-gray-400 focus:outline-none focus:border-accent w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white border-gray-300 rounded-md ${validationErrors.phone ? 'focus:border-red-500 border-red-300' : ''}`}
+          className={`border placeholder-gray-400 focus:outline-none focus:border-accent w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white border-gray-300 rounded-md ${
+            validationErrors.phone ? "focus:border-red-500 border-red-300" : ""
+          }`}
         />
         {validationErrors.phone && (
-        <p className="text-red-500">{validationErrors.phone}</p>
+          <p className="text-red-500">{validationErrors.phone}</p>
         )}
-
       </div>
       <div className="flex flex-auto gap-5 w-full items-center justify-between">
         <div className="relative w-full">
-          <p
-            className="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute"
-          >
+          <p className="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">
             {/* -----------city----------- */}
             City
           </p>
@@ -43,15 +47,19 @@ function PersonalInfo({
             placeholder="Eg. Mumbai"
             type="text"
             value={formData.city}
-            onChange={(event) => setFormData({ ...formData, city: event.target.value })}
+            onChange={(event) =>
+              setFormData({ ...formData, city: event.target.value })
+            }
             className="border   placeholder-gray-400 focus:outline-none focus:border-accent w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white border-gray-300 rounded-md"
           />
         </div>
-        <div className="relative w-full">
+      </div>
+
+      {/* <div className="relative w-full">
           <p
             className="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute"
           >
-            {/* -----------technical_role----------- */}
+            -----------technical_role-----------
             Profession
           </p>
           <input
@@ -61,27 +69,25 @@ function PersonalInfo({
             onChange={(event) => setFormData({ ...formData, technical_role: event.target.value })}
             className="border   placeholder-gray-400 focus:outline-none focus:border-accent w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white border-gray-300 rounded-md"
           />
-        </div>
-      </div>
-      <div className="relative w-full">
-        <p
-          className="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute"
-        >
-          {/* -----------qualification----------- */}
+        </div> */}
+
+      {/* <div className="relative w-full">
+        <p className="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">
+         
           Qualification
         </p>
         <input
           placeholder="B.E (Computer Science)"
           type="text"
           value={formData.qualification}
-          onChange={(event) => setFormData({ ...formData, qualification: event.target.value })}
+          onChange={(event) =>
+            setFormData({ ...formData, qualification: event.target.value })
+          }
           className="border   placeholder-gray-400 focus:outline-none focus:border-accent w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white border-gray-300 rounded-md"
         />
       </div>
       <div className="relative w-full">
-        <p
-          className="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute"
-        >
+        <p className="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">
           Skills
         </p>
         <textarea
@@ -89,12 +95,13 @@ function PersonalInfo({
           placeholder="HTML, CSS, JS, .....(Please insert skills comma and space separated"
           value={formData.skills}
           onChange={(event) => updateFormValue("skills", event.target.value)}
-          className={`border placeholder-gray-400 focus:outline-none focus:border-accent w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white border-gray-300 rounded-md ${validationErrors.skills ? 'focus:border-red-500 border-red-300' : ''}`}
+          className={`border placeholder-gray-400 focus:outline-none focus:border-accent w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white border-gray-300 rounded-md ${
+            validationErrors.skills ? "focus:border-red-500 border-red-300" : ""
+          }`}
         />
         {validationErrors.skills && (
-        <p className="text-red-500">{validationErrors.skills}</p>
+          <p className="text-red-500">{validationErrors.skills}</p>
         )}
-
       </div>
       <div className="mb-4">
         <label
@@ -109,18 +116,18 @@ function PersonalInfo({
               role="switch"
               id="flexSwitchChecked"
               checked={formData.openToWork}
-              onChange={(e) => setFormData({
-                ...formData,
-                openToWork: e.target.checked,
-              })}
+              onChange={(e) =>
+                setFormData({
+                  ...formData,
+                  openToWork: e.target.checked,
+                })
+              }
             />
           </div>
         </label>
       </div>
       <div className="relative w-full">
-        <p
-          className="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute"
-        >
+        <p className="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">
           Linkedin Profile URL
         </p>
         <input
@@ -128,16 +135,18 @@ function PersonalInfo({
           type="text"
           value={formData.linkedin}
           onChange={(event) => updateFormValue("linkedin", event.target.value)}
-          className={`border   placeholder-gray-400 focus:outline-none focus:border-accent w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white border-gray-300 rounded-md ${validationErrors.linkedin ? 'focus:border-red-500 border-red-300' : ''}`}
+          className={`border   placeholder-gray-400 focus:outline-none focus:border-accent w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white border-gray-300 rounded-md ${
+            validationErrors.linkedin
+              ? "focus:border-red-500 border-red-300"
+              : ""
+          }`}
         />
         {validationErrors.linkedin && (
-        <p className="text-red-500">{validationErrors.linkedin}</p>
+          <p className="text-red-500">{validationErrors.linkedin}</p>
         )}
       </div>
       <div className="relative w-full">
-        <p
-          className="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute"
-        >
+        <p className="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">
           Github Profile URL
         </p>
         <input
@@ -145,13 +154,14 @@ function PersonalInfo({
           type="text"
           value={formData.github}
           onChange={(event) => updateFormValue("github", event.target.value)}
-          className={`border   placeholder-gray-400 focus:outline-none focus:border-accent w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white border-gray-300 rounded-md ${validationErrors.github ? 'focus:border-red-500 border-red-300' : ''}`}
+          className={`border   placeholder-gray-400 focus:outline-none focus:border-accent w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white border-gray-300 rounded-md ${
+            validationErrors.github ? "focus:border-red-500 border-red-300" : ""
+          }`}
         />
         {validationErrors.github && (
-        <p className="text-red-500">{validationErrors.github}</p>
+          <p className="text-red-500">{validationErrors.github}</p>
         )}
-
-      </div>
+      </div> */}
     </div>
   );
 }

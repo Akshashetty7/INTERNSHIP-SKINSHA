@@ -158,7 +158,7 @@ function CompanyDetails({
 
   return (
     (!isObjectEmpty(org_data)) ? (
-      <div className="flex flex-col max-w-screen-sm md:max-w-none lg:max-w-none items-center justify-center mx-3">
+      <div className="flex flex-col max-w-screen-sm md:max-w-none lg:max-w-none items-center justify-center mx-3  ">
         <div
           className="flex w-full lg:w-3/5 md:w-4/5 flex-col justify-center
             items-center border z-10 relative

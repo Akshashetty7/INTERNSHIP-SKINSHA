@@ -1,3 +1,5 @@
+// secondlanding page
+
 import { RiArrowRightSLine } from "react-icons/ri";
 
 export default function AppFeatures() {

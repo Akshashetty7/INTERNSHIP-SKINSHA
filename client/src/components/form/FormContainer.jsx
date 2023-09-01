@@ -1,24 +1,20 @@
 // sign up page
-function FormContainer({ children, image }) {
+function FormContainer({ children, login }) {
   return (
-    <div className="bg-white relative lg:pt-14 h-full">
+    <div className="bg-orange-100 relative lg:pt-14 h-full">
       <div
         className="flex flex-col items-center justify-between pt-0 px-5 md:px-5 pb-0  mt-0 mr-auto mb-0 ml-auto max-w-7xl
       xl:px-5 lg:flex-row overflow-x-clip"
       >
-        <div className="flex flex-col items-center w-full pt-5 md:px-10  lg:pt-1 lg:flex-row">
+        <div className="flex flex-col items-center w-full pt-5 md:px-10  lg:pt-1 lg:flex-row-reverse">
           <div className="hidden md:flex w-full h-full bg-cover relative max-w-md lg:max-w-2xl lg:w-1/2">
             <div className="flex flex-col items-center justify-center w-full  h-full relative lg:pr-10">
-              <img
-                alt="form"
-                src={image}
-                className="flex w-4/5 object-cover h-auto p-0"
-              />
+              <img src="/signup.jpg" alt=""  className="  w-10/12"/>
             </div>
           </div>
           <div className="w-full flex items-center mx-0  relative z-10 max-w-2xl lg:mt-0 lg:w-1/2">
             <div
-              className="flex w-full flex-col items-start h-[80vh] md:h-[70vh] justify-start p-5 lg:p-10 bg-white shadow-2xl rounded-xl
+              className="flex w-full flex-col items-start h-[70vh] md:h-[80vh] justify-start p-5 lg:p-10 bg-white shadow-2xl rounded-xl
             relative z-10"
             >
               <p className="w-full text-2xl xl:text-4xl font-medium text-center leading-snug relative  text-[#b45309]">
@@ -29,7 +25,7 @@ function FormContainer({ children, image }) {
             </div>
             <svg
               viewBox="0 0 91 91"
-              className="absolute top-0 left-0 z-0 w-32 h-32 -mt-12 -ml-12 text-yellow-700
+              className="absolute top-0 right-0 z-0 w-32 h-32 -mt-12 -ml-12 text-yellow-700
             fill-current"
             >
               <g
@@ -381,7 +377,7 @@ function FormContainer({ children, image }) {
             </svg>
             <svg
               viewBox="0 0 91 91"
-              className="absolute bottom-0 right-0 z-0 w-32 h-32 -mb-12 -mr-12 text-yellow-700
+              className="absolute bottom-0 left-0 z-0 w-32 h-32 -mb-12 -mr-12 text-yellow-700
             fill-current"
             >
               <g

@@ -1,3 +1,6 @@
+// landing page div
+
+
 import AppFeatures from "./AppFeatures";
 import FeaturedProjects from "./FeaturedProjects";
 import Appdescription from "./Appdescription"
@@ -5,7 +8,7 @@ import Appdescription from "./Appdescription"
 function Featured() {
   return (
     <div>
-    <div className="flex items-center justify-center flex-col text-white bg-orange-200 relative px-4 z-[1] gap-12 md:py-20 md:gap-32 lg:py-30 lg:gap-40">
+    <div className="flex items-center justify-center flex-col text-white bg-orange-100 relative px-4 z-[1] gap-12 md:py-20 md:gap-32 lg:py-30 lg:gap-40">
 
       {/* ------------- Features ------------ */}
 
