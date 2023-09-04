@@ -51,11 +51,11 @@ function CompanyListings() {
       {/* ------------- Headings ------------ */}
 
       <div className="gap-0 z-[1] mt-5">
-        <h1 className=" text-gray-900 text-center text-3xl md:text-4xl font-semibold">
+        {/* <h1 className=" text-gray-900 text-center text-3xl md:text-4xl font-semibold">
           Discover Best Places to Work!
-        </h1>
+        </h1> */}
         <h1 className=" blue-gradient text-center text-3xl md:text-4xl font-semibold">
-          Company reviews. Salaries. Interviews. Jobs.
+        Discover the Best from Your Favorite Brands
         </h1>
       </div>
 
@@ -101,10 +101,10 @@ function CompanyListings() {
       </div> */}
 
       <div className="flex justify-center my-6 relative mx-3">
-        <div className="flex lg:w-3/5 flex-col justify-center w-full md:w-4/5 items-start border z-10 border-slate-300  bg-white/50 rounded-2xl py-5">
+        <div className="flex lg:w-3/5 flex-col justify-center w-full md:w-4/5 items-start border z-10 border-slate-300  bg-[#fff7ed] rounded-2xl py-5">
           <div className="flex mt-6 w-full justify-between border-b ">
             <h1 className="text-2xl text-start font-medium text-slate-800 px-5 my-2">
-              List of Companies
+              List of Brands
             </h1>
             {/* <div className="tabs">
               <a className="tab tab-bordered tab-active ">Best Matches</a>
@@ -124,7 +124,7 @@ function CompanyListings() {
             <Search
               searchInput={searchInput}
               setSearchInput={setSearchInput}
-              searchPlaceholder="Type company name to search.."
+              searchPlaceholder="Type Brand name to search.."
             />
           </div>
           {organizations.length > 0 ? (

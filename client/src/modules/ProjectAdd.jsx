@@ -1,3 +1,6 @@
+
+
+// create a project
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -7,10 +10,10 @@ export default function ProjectAdd() {
   const [formData, setFormData] = useState({
     title: "",
     description: "",
-    timeframe: "",
-    techStack: "",
-    board: "",
-    project_type: "",
+    // timeframe: "",
+    // techStack: "",
+    // board: "",
+    // project_type: "",
     required_personnel: "",
     open: false,
     proj_organization: localStorage.getItem("isOrg"),
@@ -122,7 +125,7 @@ export default function ProjectAdd() {
               htmlFor="title"
               className="block text-gray-700 stext-sm font-bold mb-2"
             >
-              Project Title*
+              Product Type*
               <input
                 type="text"
                 name="title"
@@ -151,7 +154,7 @@ export default function ProjectAdd() {
               />
             </label>
           </div>
-          <div className="mb-4">
+          {/* <div className="mb-4">
             <label
               htmlFor="timeframe"
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -167,7 +170,7 @@ export default function ProjectAdd() {
                 placeholder="Enter timeframe like one week/two months/one year"
               />
             </label>
-          </div>
+          </div> */}
           {/* <div className="mb-4">
             <label
               htmlFor="timeframe"
@@ -212,7 +215,7 @@ export default function ProjectAdd() {
               />
             </label>
           </div> */}
-          <div className="mb-4">
+          {/* <div className="mb-4">
             <label
               htmlFor="techStack"
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -286,9 +289,9 @@ export default function ProjectAdd() {
                 placeholder="UI/UX Engineer?"
               />
             </label>
-          </div>
-          <div className="mb-4">
-            {/* innline-block display is necessary for that clicking outside the input doesnt change the selection. */}
+          </div> */}
+          {/* <div className="mb-4">
+
             <div className="form-control inline-block">
               <label
                 htmlFor="flexSwitchChecked"
@@ -306,7 +309,7 @@ export default function ProjectAdd() {
               </label>
 
             </div>
-          </div>
+          </div> */}
           <div className="flex items-center justify-between glass">
             <button
               type="submit"
