@@ -78,7 +78,7 @@ function RegisterOrganization() {
     }
   };
 
-  const steps = ['Login Details', 'Company Details', 'Review'];
+  const steps = ['Login Details', 'Brand Details', 'Review'];
 
   const displayStep = (step) => {
     switch (step) {

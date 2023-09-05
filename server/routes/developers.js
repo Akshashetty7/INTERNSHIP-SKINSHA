@@ -152,7 +152,7 @@ router.route("/auth/login")
     Developer.findOne({ email: req.body.email })
       .then(async (document) => {
         if (!document) {
-          throw Error("Developer not found.");
+          throw Error("User not found.");
         }
         // this compare function returns a boolean value here.
         const passwordCompare = await bcrypt.compare(password, document.password);
@@ -172,7 +172,7 @@ router.route("/auth/login")
           errors: null,
         });
       })
-      .catch((error) => next(new ApiError(422, "Error logging in Developer.", error.toString())));
+      .catch((error) => next(new ApiError(422, "Error logging in User.", error.toString())));
   });
 
 router.route("/:uid")
@@ -181,15 +181,15 @@ router.route("/:uid")
     Developer.findOne({ uid: req.params.uid }).select("-password").populate("dev_organization").populate("dev_projects")
       .then((document) => {
         if (!document) {
-          throw Error("Developer not found");
+          throw Error("User not found");
         }
         res.status(200).json({
-          message: "Developer fetched successfully.",
+          message: "User fetched successfully.",
           data: document,
           errors: null,
         });
       })
-      .catch((error) => next(new ApiError(422, "Error fetching developer.", error.toString())));
+      .catch((error) => next(new ApiError(422, "Error fetching User.", error.toString())));
   })
 
   // isDeveloperAuthenticated is a middleware
@@ -233,10 +233,10 @@ router.route("/:uid")
         // but it returns a key `deletedCount` with value 0 or 1
         // so if it is 0 means nothing was deleted means the documen was not found to delete.
         if (document.deletedCount === 0) {
-          throw Error("Developer not found.");
+          throw Error("User not found.");
         }
         return res.status(200).json({
-          message: "Developer deleted successfully.",
+          message: "User deleted successfully.",
           data: document,
           errors: null,
         });

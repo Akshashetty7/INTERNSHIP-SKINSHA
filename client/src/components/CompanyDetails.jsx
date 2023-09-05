@@ -1,3 +1,5 @@
+// brand details
+
 /* eslint-disable camelcase */
 // import { BiSolidMap } from 'react-icons/bi';
 import { toast } from 'react-toastify';
@@ -158,7 +160,7 @@ function CompanyDetails({
 
   return (
     (!isObjectEmpty(org_data)) ? (
-      <div className="flex flex-col max-w-screen-sm md:max-w-none lg:max-w-none items-center justify-center mx-3  ">
+      <div className="flex flex-col max-w-screen-sm md:max-w-none lg:max-w-none items-center justify-center mx-3  bg-[#fff7ed] ">
         <div
           className="flex w-full lg:w-3/5 md:w-4/5 flex-col justify-center
             items-center border z-10 relative
@@ -193,7 +195,7 @@ function CompanyDetails({
           <div className="flex flex-col-reverse md:flex-row justify-start w-full items-start place-content-start">
             {/* ----------Col-1----------------*/}
             <div className="flex flex-col gap-6 px-5 py-7  mr-2  md:w-1/3 relative">
-              <div className="flex flex-col gap-2">
+              {/* <div className="flex flex-col gap-2">
                 <h1 className="text-lg font-semibold mb-2">Domain</h1>
                 <div className="flex flex-wrap">
                   <ul className="flex flex-wrap  gap-2 text-accent">
@@ -205,7 +207,7 @@ function CompanyDetails({
                     </li>
                   </ul>
                 </div>
-              </div>
+              </div> */}
 
               {/* <div className="flex flex-col gap-2  ">
               <h1 className="text-lg text-slate-900 font-medium">Industry</h1>

@@ -1,3 +1,6 @@
+
+
+// register/company
 import React from 'react';
 
 function OrgAccount({
@@ -10,10 +13,10 @@ function OrgAccount({
           className="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600
                           absolute"
         >
-          Company Name*
+          Brand Name*
         </p>
         <input
-          placeholder="Eg. Raw Engineering "
+          placeholder="Eg. nykaa"
           type="text"
           required
           value={formData.name}
@@ -47,6 +50,8 @@ function OrgAccount({
         )}
 
       </div>
+
+      
       {/* <div className="relative">
         <p
           className="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600

@@ -264,9 +264,9 @@ describe("Developer API", () => {
 
         expect(response.status).to.equal(422);
 
-        expect(response.body).to.have.property("message", "Error logging in Developer.");
+        expect(response.body).to.have.property("message", "Error logging in User.");
         expect(response.body).to.not.have.property("data");
-        expect(response.body).to.have.property("error", "Error: Developer not found.");
+        expect(response.body).to.have.property("error", "Error: User not found.");
         done();
       })
       .catch(done);
@@ -350,8 +350,8 @@ describe("Developer API", () => {
       .then((response) => {
         expect(response.status).to.equal(422);
 
-        expect(response.body).to.have.property("message", "Error updating developer.");
-        expect(response.body).to.have.property("error", "Error: Developer not found.");
+        expect(response.body).to.have.property("message", "Error updating User.");
+        expect(response.body).to.have.property("error", "Error: User not found.");
 
         done();
       })
@@ -381,8 +381,8 @@ describe("Developer API", () => {
         expect(response.status).to.equal(422);
 
         expect(response.body).to.have.property("message");
-        expect(response.body).to.have.property("message", "Error fetching developer.");
-        expect(response.body).to.have.property("error", "Error: Developer not found");
+        expect(response.body).to.have.property("message", "Error fetching User.");
+        expect(response.body).to.have.property("error", "Error: User not found");
         done();
       })
       .catch(done);
