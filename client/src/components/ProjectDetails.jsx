@@ -194,9 +194,9 @@ function ProjectDetails() {
   }
 
   return (
-    <div className="flex flex-col max-w-screen-sm md:max-w-none lg:max-w-none items-center justify-center mx-3 relative">
+    <div className="flex flex-col max-w-screen-sm md:max-w-none lg:max-w-none items-center justify-center mx-3 relative bg-orange-50">
       <Container>
-        <div className="flex w-full items-center justify-start flex-col md:flex-row relative">
+        <div className="flex w-full items-center justify-start flex-col md:flex-row relative ">
           <div className="flex w-full items-center justify-center md:items-start md:justify-start px-5 md:w-auto ">
             <img
               alt="project"
@@ -210,14 +210,14 @@ function ProjectDetails() {
               {project?.title}
             </h1>
             {/* Domain */}
-            <Link
+            {/* <Link
               to={`/companies/${project?.proj_organization?.uid}`}
               className="text-accent px-6 my-2 text-base font-medium underline"
             >
               Posted by
               {' '}
               {project?.proj_organization?.name}
-            </Link>
+            </Link> */}
             {/* Timestamp */}
             <p className="text-sm px-6 text-slate-600">
               Posted on
@@ -350,7 +350,7 @@ function ProjectDetails() {
       {dev
         && (
           <div className="flex md:relative 2xl:absolute 2xl:w-96 md:w-4/5 2xl:bg-transparent 2xl:-top-[79%] 2xl:right-[21%] fixed bottom-0 bg-white gap-2 w-full border-t md:border-0 md:bottom-4 border-slate-300 py-2 items-center justify-center z-10 px-3">
-            <div className="flex items-center justify-center w-1/2">
+            {/* <div className="flex items-center justify-center w-1/2">
               <button
                 type="button"
                 className={`flex bg-accent px-4 py-2 w-full items-center justify-center text-white hover:bg-white hover:text-accent hover:border-accent font-medium border border-slate-300 rounded-full ${proposed ? 'opacity-50 cursor-not-allowed' : ''}`}
@@ -359,10 +359,10 @@ function ProjectDetails() {
               >
                 {proposed ? "Applied" : "Apply Now"}
               </button>
-            </div>
+            </div> */}
             <div className="flex items-center justify-center w-1/2">
               {' '}
-              <button type="button" className="flex bg-white px-4 py-2 w-full items-center justify-center text-accent hover:bg-accent hover:text-white font-medium border border-accent rounded-full" onClick={() => handleSave(bookmarkState)}>
+              <button type="button" className="flex  px-4 py-2 w-full items-center justify-center text-black  hover:bg-orange-300 hover:text-white font-medium border border-accent rounded-full" onClick={() => handleSave(bookmarkState)}>
                 {/* {project.bookmark.find((id) => id === localStorage.getItem("isDev")) ? "Unsave" : "Save"} */}
                 {bookmarkState}
               </button>
