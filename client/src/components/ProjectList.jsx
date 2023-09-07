@@ -1,7 +1,7 @@
 /* eslint-disable camelcase */
 import React from "react";
-import { BsFillBookmarkPlusFill } from 'react-icons/bs';
-import { Link } from 'react-router-dom';
+import { BsFillBookmarkPlusFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const ProjectList = ({ projectsProp = [] }) => {
   const authToken = localStorage.getItem("authToken");
@@ -23,14 +23,14 @@ const ProjectList = ({ projectsProp = [] }) => {
       thumbnail,
       project_type,
       required_personnel,
-    //   featured,
-    //   board,
-    //   techstack,
-    //   fixed_price,
+      //   featured,
+      //   board,
+      //   techstack,
+      //   fixed_price,
     } = projects;
 
     return (
-    // giving key prop to react fragment is imp to avoid unique key warnings
+      // giving key prop to react fragment is imp to avoid unique key warnings
       <React.Fragment key={index}>
         {/* ---------------- Project List--------------- */}
         <Link
@@ -45,12 +45,14 @@ const ProjectList = ({ projectsProp = [] }) => {
               className="flex place-content-start items-start w-full aspect-video  h-48 object-cover rounded-lg"
               alt={title}
             /> */}
-<img src="/skin.jpg" alt=""   className="flex place-content-start items-start w-full aspect-video  h-48 object-cover rounded-lg" />
+            <img
+              src={thumbnail}
+              alt=""
+              className="flex place-content-start items-start w-full aspect-video  h-48 object-cover rounded-lg"
+            />
             <div className="flex flex-col w-full">
-             
               <h1 className="text-xl font-medium text-slate-900">{title}</h1>
 
-             
               <p className="text-sm text-slate-600">Posted by Google</p>
               <div className="flex my-5">
                 {/* <div className="flex flex-col w-1/2 items-start justify-start gap-3">

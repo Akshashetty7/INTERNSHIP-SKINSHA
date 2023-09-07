@@ -3,7 +3,8 @@ const { isDeveloperAuthenticated } = require("../middleware/isAuthenticated");
 const ProjectHistory = require("../models/projectHistory");
 const ApiError = require("../utils/ApiError");
 
-router.route("/")
+router
+  .route("/")
   .get((req, res, next) => {
     // this queryObject is beneficial when some wrong query which is not intended is used in the URL
     const queryObject = {};
@@ -32,12 +33,20 @@ router.route("/")
           });
         }
       })
-      .catch((error) => next(new ApiError(422, "Error fetching Projects History.", error.toString())));
+      .catch((error) =>
+        next(
+          new ApiError(
+            422,
+            "Error fetching Projects History.",
+            error.toString()
+          )
+        )
+      );
   })
 
   .post(isDeveloperAuthenticated, (req, res, next) => {
     const project = req.body;
-
+    console.log("CAME HERE  ");
     ProjectHistory.create(project)
       .then((document) => {
         res.status(201).json({
@@ -46,10 +55,15 @@ router.route("/")
           errors: null,
         });
       })
-      .catch((error) => next(new ApiError(422, "Error posting project histroy", error.toString())));
+      .catch((error) =>
+        next(
+          new ApiError(422, "Error posting project histroy", error.toString())
+        )
+      );
   });
 
-router.route("/:uid")
+router
+  .route("/:uid")
   .get(isDeveloperAuthenticated, (req, res, next) => {
     ProjectHistory.findOne({ uid: req.params.uid })
       .then((document) => {
@@ -62,13 +76,21 @@ router.route("/:uid")
           errors: null,
         });
       })
-      .catch((error) => next(new ApiError(422, "Error fetching project history", error.toString())));
+      .catch((error) =>
+        next(
+          new ApiError(422, "Error fetching project history", error.toString())
+        )
+      );
   })
 
   .patch(isDeveloperAuthenticated, (req, res, next) => {
     const updatedProject = req.body;
 
-    ProjectHistory.findOneAndUpdate({ uid: req.params.uid }, { ...updatedProject }, { new: true })
+    ProjectHistory.findOneAndUpdate(
+      { uid: req.params.uid },
+      { ...updatedProject },
+      { new: true }
+    )
       .then((document) => {
         if (!document) {
           throw Error("Project not found.");
@@ -79,7 +101,11 @@ router.route("/:uid")
           errors: null,
         });
       })
-      .catch((error) => next(new ApiError(422, "Error updating project history", error.toString())));
+      .catch((error) =>
+        next(
+          new ApiError(422, "Error updating project history", error.toString())
+        )
+      );
   })
 
   .delete(isDeveloperAuthenticated, (req, res, next) => {
@@ -94,6 +120,10 @@ router.route("/:uid")
           errors: null,
         });
       })
-      .catch((error) => next(new ApiError(422, "Error deleting project history", error.toString())));
+      .catch((error) =>
+        next(
+          new ApiError(422, "Error deleting project history", error.toString())
+        )
+      );
   });
 module.exports = router;

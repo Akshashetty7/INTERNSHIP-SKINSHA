@@ -4,14 +4,17 @@ const jwt = require("jsonwebtoken");
 const Developer = require("../models/developer");
 const Organization = require("../models/organization");
 const ApiError = require("../utils/ApiError");
-require('dotenv').config();
+require("dotenv").config();
 
 const secret = process.env.JWT_SECRET;
 
 const isDeveloperAuthenticated = (req, res, next) => {
   if (req.headers.authorization) {
     // also checking if the value of access token is right or not.
-    const verification = jwt.verify(req.headers.authorization, secret);
+    const verification = jwt.verify(
+      req.headers.authorization.split(" ")[1],
+      secret
+    );
 
     // the following should be used for testing as weirdly jwt.verify() was return 2 different kind of objects
     // return Developer.findOne({ email: verification })
@@ -23,7 +26,15 @@ const isDeveloperAuthenticated = (req, res, next) => {
           return next();
         }
       })
-      .catch((error) => next(new ApiError(422, "Error in authentication operation.", error.toString())));
+      .catch((error) =>
+        next(
+          new ApiError(
+            422,
+            "Error in authentication operation.",
+            error.toString()
+          )
+        )
+      );
     // return res.status(200).json({
     //   redirect: true,
     // });
@@ -37,16 +48,26 @@ const isOrganizationAuthenticated = (req, res, next) => {
   if (req.headers.authorization) {
     // also checking if the value of access token is right or not.
     const verification = jwt.verify(req.headers.authorization, secret);
-    return Organization.findOne({ uid: verification.uid })
-    // return Organization.findOne({ uid: verification })
-      .then((document) => {
-        if (!document) {
-          throw Error("Session expired. Please login again.");
-        } else {
-          return next();
-        }
-      })
-      .catch((error) => next(new ApiError(422, "Error in authentication operation.", error.toString())));
+    return (
+      Organization.findOne({ uid: verification.uid })
+        // return Organization.findOne({ uid: verification })
+        .then((document) => {
+          if (!document) {
+            throw Error("Session expired. Please login again.");
+          } else {
+            return next();
+          }
+        })
+        .catch((error) =>
+          next(
+            new ApiError(
+              422,
+              "Error in authentication operation.",
+              error.toString()
+            )
+          )
+        )
+    );
     // return res.status(200).json({
     //   redirect: true,
     // });

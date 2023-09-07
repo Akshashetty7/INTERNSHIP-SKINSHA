@@ -100,7 +100,8 @@ router
   .post(isDeveloperAuthenticated, (req, res, next) => {
     const project = req.body;
     const file = req.files ? req.files.photo : null;
-
+    console.log(project, "project");
+    console.log(file, "file");
     try {
       if (file) {
         // A promise was needed to handle the errors and process the result using then blocks so promisified the cloudinary method as it is not a promise by default.
@@ -110,6 +111,7 @@ router
             project.thumbnail = result.url;
             // return Project.create(project);
             // shifting the common logic code to controller.
+            console.log(project.thumbnail, "project.thumbnail");
             controller.postProject(res, next, project, file);
           })
           .catch((error) => {
@@ -172,6 +174,7 @@ router
         const cloudinaryUpload = promisify(cloudinary.uploader.upload);
         cloudinaryUpload(file.tempFilePath)
           .then((result) => {
+            console.log(result, "result");
             project.thumbnail = result.url;
 
             controller.updateProject(req, res, next, project, file);
