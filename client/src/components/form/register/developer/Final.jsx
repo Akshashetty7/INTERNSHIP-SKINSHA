@@ -34,7 +34,7 @@ function Final({
         setImage={setImage}
       />
       {/* <RxAvatar className="w-40 h-40 text-accent" /> */}
-      <h1>Confirm your details and click confirm to register.</h1>
+      <h1  className='text-yellow-700'>Confirm your details and click confirm to register.</h1>
     </div>
   );
 }

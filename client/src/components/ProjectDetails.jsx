@@ -211,12 +211,12 @@ function ProjectDetails() {
             </h1>
             {/* Domain */}
             <Link
-              to={`/companies/${project?.proj_organization.uid}`}
+              to={`/companies/${project?.proj_organization?.uid}`}
               className="text-accent px-6 my-2 text-base font-medium underline"
             >
               Posted by
               {' '}
-              {project?.proj_organization.name}
+              {project?.proj_organization?.name}
             </Link>
             {/* Timestamp */}
             <p className="text-sm px-6 text-slate-600">
@@ -232,14 +232,14 @@ function ProjectDetails() {
                 Worldwide
               </p>
               {/* Proposal Count */}
-              <p className="text-base  text-slate-800">
+              {/* <p className="text-base  text-slate-800">
                 Total Proposals Posted :
                 {' '}
                 {proposalsCount >= 0 ? proposalsCount : "Please login to see"}
                 <span className="text-accent animate-pulse">
                   {project?.proposals}
                 </span>
-              </p>
+              </p> */}
             </div>
           </div>
         </div>
@@ -248,8 +248,8 @@ function ProjectDetails() {
           {/* description */}
           <h1 className="description px-6">{project?.description}</h1>
         </div>
-        {/* Pricing */}
-        <div className="flex justify-start gap-8 w-full border-t pt-3 pb-6">
+      
+        {/* <div className="flex justify-start gap-8 w-full border-t pt-3 pb-6">
           <div className="flex text-base px-6 text-start font-normal gap-3 items-start">
             <FaCircleDollarToSlot className="text-accent mt-2" />
             <p className="text-base font-medium">
@@ -264,7 +264,7 @@ function ProjectDetails() {
               </span>
             </p>
           </div>
-          {/* Experience Level */}
+        
           <div className="flex text-base px-6 text-start font-normal gap-3 items-start">
             <p className="text-base font-medium">
               {project?.timeframe}
@@ -276,9 +276,9 @@ function ProjectDetails() {
               </span>
             </p>
           </div>
-        </div>
-        <div className="flex w-full border-t py-3">
-          {/* Contract type */}
+        </div> */}
+        {/* <div className="flex w-full border-t py-3">
+         
           <p className="text-base capitalize px-6 text-start font-normal text-slate-800">
             <span className=" font-medium">Project Type:</span>
             {' '}
@@ -286,9 +286,9 @@ function ProjectDetails() {
             {' '}
             project
           </p>
-        </div>
-        <div className="flex flex-col w-full border-t py-3 px-6 gap-4">
-          {/* TechStack */}
+        </div> */}
+        {/* <div className="flex flex-col w-full border-t py-3 px-6 gap-4">
+         
           <p className="text-base mb-3 text-start font-medium text-slate-800">
             Skill and Expertise
           </p>
@@ -299,23 +299,23 @@ function ProjectDetails() {
               </li>
             </ul>
           </div>
-        </div>
-        <div className="flex flex-col md:flex-row md:gap-64 gap-8 w-full border-t py-3 px-6">
-          <div className="flex flex-col items-start justify-start gap-3">
+        </div> */}
+        {/* <div className="flex flex-col md:flex-row md:gap-64 gap-8 w-full border-t py-3 px-6"> */}
+          {/* <div className="flex flex-col items-start justify-start gap-3">
             <h1
               className="text-xl font-semibold text-slate-800"
             >
               Project Leader
             </h1>
             <Members
-              to={`/developers/${project?.lead.uid}`}
-              image={project?.lead.profile_pic}
-              name={`${project?.lead.fname} ${project?.lead.lname}`}
+              to={`/developers/${project?.lead?.uid}`}
+              image={project?.lead?.profile_pic}
+              name={`${project?.lead?.fname} ${project?.lead?.lname}`}
               className="font-medium text-lg md:text-2xl"
               imageclass="w-[10vw] md:w-20"
             />
-          </div>
-          <div className="flex flex-col items-start justify-start gap-3">
+          </div> */}
+          {/* <div className="flex flex-col items-start justify-start gap-3">
             <h1
               className="text-xl font-semibold text-slate-800"
             >
@@ -331,8 +331,8 @@ function ProjectDetails() {
                 imageclass="w-[10vw] md:w-14"
               />
             ))}
-          </div>
-        </div>
+          </div> */}
+        {/* </div> */}
         {/* <div className="flex flex-row items-center w-full border-t py-3 px-6 gap-4">
           <p className="flex items-center text-lg my-3 text-start font-medium text-slate-800">
             Upgrade your membership to see bid range */}

@@ -16,6 +16,7 @@ function FeaturedProjects() {
     };
     fetchProjects();
   }, []);
+  
 
   return (
     <div className="flex flex-col max-w-7xl">

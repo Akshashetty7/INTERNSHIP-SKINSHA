@@ -39,7 +39,7 @@ function ProjectListings() {
   const [saveBtnState, SetsaveBtnState] = useState(false);
   const [bestMatchesBtnState, setBestMatchesBtnState] = useState(true);
   const authToken = localStorage.getItem("authToken");
-
+console.log(projects,"PROJECTS")
   const progressState = useContext(loadingContext);
   const { setProgress } = progressState;
 
@@ -118,7 +118,7 @@ function ProjectListings() {
         {/* <h1 className=" text-gray-900 text-center text-3xl md:text-4xl font-semibold">
           Find your dream projects
         </h1> */}
-        <h1 className=" blue-gradient text-center text-3xl md:text-4xl  font-semibold ">
+        <h1 className=" yellow-gradient text-center text-3xl md:text-4xl  font-semibold ">
         Find Your Ideal Skincare Companion
         </h1>
 
@@ -197,7 +197,7 @@ function ProjectListings() {
             </div>
           )}
           {!authToken && projects.length > 0 ? (
-            <h1 className=" blue-gradient text-center text-3xl md:text-4xl font-semibold ml-5">
+            <h1 className=" yellow-gradient text-center text-3xl md:text-4xl font-semibold ml-5">
               Please login to see more...
             </h1>
           ) : null}

@@ -52,18 +52,18 @@ function DevelopersListing() {
       {/* ------------- Headings ------------ */}
 
       <div className="gap-0 z-[1] mt-5">
-        <h1 className=" text-gray-900 text-center text-3xl md:text-4xl font-semibold">
+        {/* <h1 className=" text-gray-900 text-center text-3xl md:text-4xl font-semibold">
           Discover Best People to Hire!
-        </h1>
-        <h1 className=" blue-gradient text-center text-3xl md:text-4xl font-semibold">
-          Developer reviews. Rates. Interviews.
+        </h1> */}
+        <h1 className="  yellow-gradient text-center text-3xl md:text-4xl font-semibold">
+          Discover  Users
         </h1>
       </div>
       <div className="flex justify-center my-6 relative mx-3">
         <div className="flex lg:w-3/5 flex-col justify-center w-full md:w-4/5 items-start border z-10 border-slate-300  bg-white/50 rounded-2xl py-5">
           <div className="flex mt-6 w-full justify-between border-b ">
             <h1 className="text-2xl text-start font-medium text-slate-800 px-5 my-2">
-              List of Developers
+              List of Users
             </h1>
             {/* <div className="tabs">
               <a className="tab tab-bordered tab-active ">Best Matches</a>

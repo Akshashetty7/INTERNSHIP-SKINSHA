@@ -22,7 +22,7 @@ export default function AboutCard(props) {
         className="rounded-3xl max-w-md w-[80%]"
       />
       <div className="flex items-center flex-col">
-        <h2 className="text-center capitalize font-medium blue-gradient text-3xl drop-shadow font-sans shadow-accent">
+        <h2 className="text-center capitalize font-medium yellow-gradient text-3xl drop-shadow font-sans shadow-accent">
           {props.name}
         </h2>
         <p className="text-xl capitalize text-slate-800 font-medium">

@@ -54,7 +54,7 @@ function CompanyListings() {
         {/* <h1 className=" text-gray-900 text-center text-3xl md:text-4xl font-semibold">
           Discover Best Places to Work!
         </h1> */}
-        <h1 className=" blue-gradient text-center text-3xl md:text-4xl font-semibold">
+        <h1 className=" yellow-gradient text-center text-3xl md:text-4xl font-semibold">
         Discover the Best from Your Favorite Brands
         </h1>
       </div>
@@ -135,7 +135,7 @@ function CompanyListings() {
             </div>
           )}
           {!authToken && organizations.length > 0 ? (
-            <h1 className=" blue-gradient text-center text-3xl md:text-4xl font-semibold ml-5">
+            <h1 className=" yellow-gradient text-center text-3xl md:text-4xl font-semibold ml-5">
               Please login to see more...
             </h1>
           ) : null}

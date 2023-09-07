@@ -62,14 +62,14 @@ function ConfirmationDialog({
           <button
             type="button"
             onClick={cancel}
-            className="bg-slate-100 text-base border border-slate-300 rounded-lg text-slate-600 px-6 py-2 hover:bg-slate-800 hover:text-white"
+            className="bg-yellow-700 text-base border border-slate-300 rounded-lg text-slate-600 px-6 py-2 hover:bg-slate-800 hover:text-white"
           >
             Cancel
           </button>
           <button
             type="button"
             onClick={() => requestDelete(propUid)}
-            className="bg-red-200text-base border border-red-500 rounded-lg text-red-500 px-6 py-3 hover:bg-red-500 hover:text-white"
+            className="bg-yellow-700 text-base border border-red-500 rounded-lg text-red-500 px-6 py-3 hover:bg-red-500 hover:text-white"
           >
             Delete
           </button>

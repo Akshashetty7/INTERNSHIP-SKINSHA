@@ -12,6 +12,11 @@
 		@apply bg-gradient-to-r from-accent via-slate-50 to-blue-300 bg-clip-text text-transparent;
 	}
 
+	.yellow-gradient {
+		@apply bg-gradient-to-r from-accent to-yellow-600 py-1 md:py-3 bg-clip-text text-transparent;
+	}
+
+
 	.blue-gradient {
 		@apply bg-gradient-to-r from-accent to-cyan-400 py-1 md:py-3 bg-clip-text text-transparent;
 	}
@@ -71,7 +76,7 @@
 }
 
 :root{
-	--toastify-color-success: #6c47ff;
+	--toastify-color-success: #d97706;
 	font-family: 'Playfair Display', serif;
 }
 
@@ -104,7 +109,7 @@ html {
 
 ::selection {
 	color: white;
-	background: #6c47ff;
+	background: #92400e;
 }
 
 .navbar {
@@ -122,14 +127,14 @@ html {
 	max-width: 650;
 	background-image: radial-gradient(
 			at 27% 37%,
-			hsla(215, 98%, 61%, 1) 0px,
+			rgb(253, 175, 58) 0px,
 			transparent 0%
 		),
 		/* radial-gradient(at 52% 99%, rgb(165, 58, 253) 0px, transparent 50%), */
 			radial-gradient(at 97% 96%, hsla(38, 60%, 74%, 1) 0px, transparent 50%),
 		radial-gradient(at 79% 53%, hsla(343, 68%, 79%, 1) 0px, transparent 50%),
-		radial-gradient(at 10% 29%, rgba(133, 90, 252, 0.486) 0px, transparent 50%),
-		radial-gradient(at 33% 50%, hsla(222, 67%, 73%, 1) 0px, transparent 50%);
+		radial-gradient(at 10% 29%, rgba(252, 201, 90, 0.884) 0px, transparent 50%),
+		radial-gradient(at 33% 50%, rgba(232, 140, 140, 0.137) 0px, transparent 50%);
 	position: absolute;
 	content: '';
 	width: 100%;

@@ -25,7 +25,7 @@ function ProfilePicDev({
       <div className="box-decoration w-full py-6">
         <label
           htmlFor="image-upload-input"
-          className="image-upload-label"
+          className="image-upload-label  "
         >
           {image ? image.name : 'Choose an image'}
 

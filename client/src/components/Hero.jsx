@@ -39,7 +39,7 @@ function Hero() {
       {/* ------------- Headings ------------ */}
 
       <div className="gap-0 z-[1]">
-        <h1 className=" text-yellow-800 text-center text-2xl md:text-2xl font-semibold">
+        <h1 className="     text-yellow-800 text-center text-2xl md:text-2xl font-semibold">
          WELCOME TO THE SKIN-SHA UNIVERSE
         </h1>
         

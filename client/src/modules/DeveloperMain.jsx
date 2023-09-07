@@ -100,14 +100,14 @@ function DeveloperMain() {
         <div className="flex flex-col-reverse md:flex-row justify-start w-full items-start place-content-start relative">
           {/* ----------Col-1----------------*/}
           <div className="flex flex-col gap-6 px-5 py-7 relative flex-wrap  mr-2  md:w-1/3">
-            <div className="flex flex-col gap-2  ">
+            {/* <div className="flex flex-col gap-2  ">
               <h1 className="text-lg text-slate-900 font-medium">Role</h1>
               <p className="description">{developer?.technical_role}</p>
             </div>
             <div className="flex flex-col gap-2">
               <h1 className="text-lg text-slate-900 font-medium">Education</h1>
               <p className="description">{developer?.qualification}</p>
-            </div>
+            </div> */}
             <div className="flex w-full flex-col gap-2 relative">
               <h1 className="text-lg text-slate-900 font-medium">Contact</h1>
               <Link
@@ -124,7 +124,7 @@ function DeveloperMain() {
                 <FaPhone />
                 {developer?.phone}
               </Link>
-              <Link
+              {/* <Link
                 to={developer?.linkedin}
                 target="_blank"
                 className="contact-dev relative w-full"
@@ -144,22 +144,22 @@ function DeveloperMain() {
                   <BsGithub />
                 </p>
                 <p className="break-words w-full">{developer?.github}</p>
-              </Link>
+              </Link> */}
 
             </div>
           </div>
           {/* ----------Col-2----------------*/}
-          <div className="flex flex-col border-b md:border-b-0 md:border-l md:pl-2 border-slate-300 gap-6 md:w-2/3 pb-10">
-            <div className="flex flex-col gap-2 px-5 py-7">
-              {/* ---------Domain------------ */}
+          {/* <div className="flex flex-col border-b md:border-b-0 md:border-l md:pl-2 border-slate-300 gap-6 md:w-2/3 pb-10"> */}
+            {/* <div className="flex flex-col gap-2 px-5 py-7">
+             
               <h1 className="text-2xl font-semibold mb-3">
                 {developer?.technical_role}
               </h1>
               <p className="description">
                 {developer?.about}
               </p>
-            </div>
-            <div className="flex flex-col gap-2 px-5">
+            </div> */}
+            {/* <div className="flex flex-col gap-2 px-5">
               <h1 className="text-lg font-semibold mb-3">Skills</h1>
               <div className="flex flex-wrap">
                 <ul className="flex flex-wrap  gap-2 capitalize text-accent">
@@ -170,19 +170,21 @@ function DeveloperMain() {
                   ))}
                 </ul>
               </div>
-            </div>
-          </div>
+            </div> */}
+          {/* </div> */}
         </div>
       </div>
-      <div
+      {/* <div
         className="flex w-full lg:w-3/5 md:w-4/5 flex-col justify-center
             items-center border z-10 relative
            border-slate-300  bg-white/50 rounded-2xl my-6 mb-10"
       >
+
+      
         <div className="flex flex-col  pt-7 relative w-full">
           <h1 className="text-2xl px-5 font-semibold mb-6">Project History</h1>
 
-          {/* ---------TODO: Project History------------ */}
+         
           {projectHistory.length === 0 && (
             <h2 className="text-xl px-5 py-5">
               {`No projects found in ${developer.fname}'s Project History.`}
@@ -193,11 +195,11 @@ function DeveloperMain() {
             <div key={project.uid} className="flex flex-row justify-between border-t px-5 py-5 border-slate-300 relative">
               <div>
 
-                {/* ------------------------ Project title-------------------------- */}
+               
                 <h2 className="text-xl font-semibold mb-2">
                   {project.title}
                 </h2>
-                {/* ------------------------ Project timeline-------------------------- */}
+              
                 <div className="flex place-content-start items-center w-full text-slate-600 gap-1">
                   <p className="flex  w-[56%] mb-3">
                     <BsFillCalendarEventFill className="mr-[3%]" />
@@ -221,7 +223,7 @@ function DeveloperMain() {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
 
       <div
         className="flex w-full lg:w-3/5 md:w-4/5 flex-col justify-center

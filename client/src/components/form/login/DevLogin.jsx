@@ -142,8 +142,8 @@ export default function DevLogin() {
         <button
           type="button"
           onClick={() => onSignIn()}
-          className={`absolute -bottom-52 cursor-pointer  pt-4 pr-5 pb-4 pl-5 text-xl font-medium text-center text-white bg-indigo-500
-        rounded-lg transition duration-200 hover:bg-indigo-600 ease w-full`}
+          className={`absolute -bottom-52 cursor-pointer  pt-4 pr-5 pb-4 pl-5 text-xl font-medium text-center text-white bg-yellow-700
+        rounded-lg transition duration-200 hover:bg-orange-300 ease w-full`}
         >
           Sign In
         </button>

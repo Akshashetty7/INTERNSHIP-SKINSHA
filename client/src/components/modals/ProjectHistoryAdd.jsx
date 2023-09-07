@@ -229,7 +229,7 @@ function ProjectHistoryAdd({ fetchHistory }) {
               type="button"
               onClick={(e) => handleSubmit(e)}
               className="cursor-pointer inline-block  pt-4 pr-5 pb-4 pl-5 text-xl font-medium text-center
-             text-white bg-indigo-500 rounded-lg duration-200 hover:bg-indigo-600 ease w-full"
+             text-white bg-yellow-700 rounded-lg duration-200 hover:bg-orange-300 ease w-full"
             >
               Add
             </button>

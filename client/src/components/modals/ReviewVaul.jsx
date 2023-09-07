@@ -162,7 +162,7 @@ function ReviewVaul({
             </div>
             <div className="p-4 bg-zinc-100 border-t border-zinc-200">
               <div className="flex gap-6 justify-center max-w-lg mx-auto">
-                <p>Thank you for using IdeaBox</p>
+                <p>Thank you for using Skin-Sha</p>
               </div>
             </div>
           </Drawer.Content>
