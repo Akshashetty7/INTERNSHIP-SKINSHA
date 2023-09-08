@@ -256,7 +256,7 @@ export default function ProjectAdd() {
               />
             </label>
           </div> */}
-          <div className="mb-4">
+          {/* <div className="mb-4">
             <label
               htmlFor="timeframe"
               className="block text-gray-700 text-sm font-bold mb-2 flex-left"
@@ -293,7 +293,7 @@ export default function ProjectAdd() {
               </div>
               <input id="dropzone-file" type="file" className="hidden" />
             </label>
-          </div>
+          </div> */}
           {/* <div className="mb-4">
             <label
               htmlFor="techStack"
