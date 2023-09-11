@@ -1,4 +1,4 @@
-/* eslint-disable camelcase */
+
 import { BsFillBookmarkPlusFill } from 'react-icons/bs';
 import { BiSolidMap } from 'react-icons/bi';
 import { AiFillStar } from 'react-icons/ai';
@@ -15,16 +15,12 @@ const DeveloperList = ({ developersProp = [] }) => {
     limitedDevelopers = developersProp;
   }
   return limitedDevelopers.map((developer) => {
-    // console.log('developer >>>>>', developer);
+    
     const {
       fname,
       lname,
-      qualification,
-      technical_role,
       profile_pic,
       uid,
-      skills,
-      about,
       city,
     } = developer;
     return (
@@ -60,22 +56,7 @@ const DeveloperList = ({ developersProp = [] }) => {
               <AiFillStar />
             </div>
             <div className="flex my-5">
-              {/* <div className="flex flex-col w-1/2 items-start justify-start gap-3"> */}
-                {/* ---------Profession------------- */}
-                {/* <div>
-                  <h3 className="listing-content-data">Domain</h3>
-                  <h4 className="listing-content-constant description">
-                    {technical_role}
-                  </h4>
-                </div> */}
-                {/* --------Education------------ */}
-                {/* <div>
-                  <h3 className="listing-content-data">Education</h3>
-                  <h4 className="link link-hover company-website">
-                    {qualification}
-                  </h4>
-                </div> */}
-              {/* </div> */}
+              
 
               <div className="flex flex-col w-1/2 items-start justify-start gap-3">
                 {/* -----------TODO: Experience------------ */}
@@ -98,8 +79,8 @@ const DeveloperList = ({ developersProp = [] }) => {
           {about}
         </p>
 
-        {/* -------------Skill---------------- */}
-        <div className="flex flex-wrap">
+        -------------Skill----------------
+        {/* <div className="flex flex-wrap">
           <ul className="flex flex-wrap  gap-2 capitalize text-accent">
             {skills.map((skill, index) => (
               <li
@@ -110,7 +91,7 @@ const DeveloperList = ({ developersProp = [] }) => {
               </li>
             ))}
           </ul>
-        </div>
+        </div> */}
       </Link>
     );
   });

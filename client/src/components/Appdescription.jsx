@@ -13,14 +13,7 @@ export default function Appdescription() {
           Whether you're a skincare enthusiast or just starting to explore the
           world of beauty.
         </h2>
-        {/* <div className="flex">
-          <a
-            href="/about"
-            className="flex items-center p-3 mt-10 text-sm rounded-lg font-semibold bg-accent hover:bg-accent/50 bg-orange-300"
-          >
-            About Skin-Sha <RiArrowRightSLine className="ml-2 text-md" />
-          </a>
-        </div> */}
+       
       </div>
 
       {/* ------------- Features Card ------------ */}

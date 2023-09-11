@@ -13,8 +13,7 @@ export default function FilterButton({
   const { setProgress } = progressState;
 
   const filterProjectsFunc = (filter) => {
-    // console.log("Heloooo", filter.property);
-
+  
     let queryParam;
 
     const filterProjects = async () => {
@@ -29,12 +28,11 @@ export default function FilterButton({
       const filtered = await response.json();
       setProjects(filtered.data);
       await setProgress(100);
-      // console.log('fetch filtered projects------------', filtered.data);
-      // console.log('fetch Developers------------', developers);
+      
     };
 
     const filterOrganizations = async () => {
-      // always start the loader with 0
+     // always start  the loader with 0
       await setProgress(0);
       await setProgress(30);
 
@@ -54,7 +52,7 @@ export default function FilterButton({
       await setProgress(0);
       await setProgress(10);
 
-      // console.log("got-", queryParam);
+    
       const response = await fetch(
         `${import.meta.env.VITE_API_URL}/developers${queryParam}`,
         { mode: "cors" },

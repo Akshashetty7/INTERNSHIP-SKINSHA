@@ -1,4 +1,4 @@
-/* eslint-disable react/destructuring-assignment */
+
 import { Link } from 'react-router-dom';
 
 function Members(props) {

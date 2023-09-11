@@ -4,7 +4,7 @@ import { RiArrowRightSLine } from "react-icons/ri";
 import { toast } from "react-toastify";
 import ProjectList from "../components/ProjectList";
 import FilterButton from "../components/navbar/FilterButton";
-// import loading from "../../../../../../../../SVG/loading.svg";
+
 import loading from "../../public/SVG/loading.svg";
 import Search from "../components/navbar/Search";
 import { loadingContext } from "../components/context/LoadingState";
@@ -77,7 +77,7 @@ console.log(projects,"PROJECTS")
     const fetchedProjects = await response.json();
     setProjects(fetchedProjects.data);
     await setProgress(50);
-    // alert(`${fetchedProjects.message}`);
+    
     toast.success(`${fetchedProjects.message}`, {
       position: toast.POSITION.TOP_CENTER,
       autoClose: 2000,
@@ -115,9 +115,7 @@ console.log(projects,"PROJECTS")
       {/* ------------- Headings ------------ */}
 
       <div className="gap-0 z-[1] mt-5">
-        {/* <h1 className=" text-gray-900 text-center text-3xl md:text-4xl font-semibold">
-          Find your dream projects
-        </h1> */}
+        
         <h1 className=" yellow-gradient text-center text-3xl md:text-4xl  font-semibold ">
         Find Your Ideal Skincare Companion
         </h1>

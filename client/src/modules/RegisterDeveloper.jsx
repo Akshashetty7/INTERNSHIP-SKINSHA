@@ -10,7 +10,6 @@ import Final from '../components/form/register/developer/Final';
 import FormContainer from '../components/form/FormContainer';
 import developer from "../../public/developer.svg";
 import { loadingContext } from '../components/context/LoadingState';
-// import developer from "../../../../../../../../developer.svg";
 
 function RegisterDeveloper() {
   const progressState = useContext(loadingContext);
@@ -26,14 +25,9 @@ function RegisterDeveloper() {
     password: '',
     phone: '',
     city: '',
-    // technical_role: '',
-    // qualification: '',
-    // skills: "",
+    
     photo: null,
-    // openToWork: false,
-    // linkedin: "",
-    // github: "",
-    // about: "",
+    
   });
   const [validationErrors, setValidationErrors] = useState({
     fname: '',
@@ -42,14 +36,9 @@ function RegisterDeveloper() {
     password: '',
     phone: '',
     city: '',
-    // technical_role: '',
-    // qualification: '',
-    // skills: "",
+    
     photo: null,
-    // openToWork: false,
-    // linkedin: "",
-    // github: "",
-    // about: "",
+    
   });
   const validateFname = (name) => {
     if (name.length === 0) {
@@ -110,33 +99,7 @@ function RegisterDeveloper() {
       setValidationErrors((prevErrors) => ({ ...prevErrors, phone: "" }));
     }
   };
-  // const validateSkills = (skills) => {
-  //   if (skills.length === 0) {
-  //     setValidationErrors((prevErrors) => ({ ...prevErrors, skills: "" }));
-  //   } else if (!/^([a-zA-Z.]+, )*[a-zA-Z.]+$/.test(skills)) {
-  //     setValidationErrors((prevErrors) => ({ ...prevErrors, skills: "Please provide a valid input with space comma separation." }));
-  //   } else {
-  //     setValidationErrors((prevErrors) => ({ ...prevErrors, skills: "" }));
-  //   }
-  // };
-  // const validateLinkedin = (linkedin) => {
-  //   if (linkedin.length === 0) {
-  //     setValidationErrors((prevErrors) => ({ ...prevErrors, linkedin: "" }));
-  //   } else if (!/^(https?:\/\/(www\.)?|http:\/\/(www\.)?)([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(\/[^\s]*)?$/.test(linkedin)) {
-  //     setValidationErrors((prevErrors) => ({ ...prevErrors, linkedin: "Please provide a valid URL." }));
-  //   } else {
-  //     setValidationErrors((prevErrors) => ({ ...prevErrors, linkedin: "" }));
-  //   }
-  // };
-  // const validateGithub = (github) => {
-  //   if (github.length === 0) {
-  //     setValidationErrors((prevErrors) => ({ ...prevErrors, github: "" }));
-  //   } else if (!/^(https?:\/\/(www\.)?|http:\/\/(www\.)?)([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(\/[^\s]*)?$/.test(github)) {
-  //     setValidationErrors((prevErrors) => ({ ...prevErrors, github: "Please provide a valid URL." }));
-  //   } else {
-  //     setValidationErrors((prevErrors) => ({ ...prevErrors, github: "" }));
-  //   }
-  // };
+  
 
   const updateFormValue = (field, value) => {
     setFormData({ ...formData, [field]: value });
@@ -151,13 +114,14 @@ function RegisterDeveloper() {
       validateLname(value);
     } else if (field === "phone") {
       validatePhone(value);
-    } else if (field === "skills") {
-      validateSkills(value);
-    } else if (field === "linkedin") {
-      validateLinkedin(value);
-    } else if (field === "github") {
-      validateGithub(value);
     }
+    //  else if (field === "skills") {
+    //   validateSkills(value);
+    // } else if (field === "linkedin") {
+    //   validateLinkedin(value);
+    // } else if (field === "github") {
+    //   validateGithub(value);
+    // }
   };
 
   const steps = ['Login Details', 'Personal Details','Review'];
@@ -244,40 +208,16 @@ function RegisterDeveloper() {
       bodyData.append('email', formData.email);
       bodyData.append('password', formData.password);
       bodyData.append('phone', formData.phone);
-      // if (formData.qualification) {
-      //   bodyData.append('qualification', formData.qualification);
-      // }
-      // if (formData.skills) {
-        
-      //   const skillsArray = formData.skills.split(", ");
-        
-      //   skillsArray.forEach((skill) => {
-      //     bodyData.append('skills', skill);
-      //   });
-      // }
+      
       if (formData.city) {
         bodyData.append('city', formData.city);
       }
-      // if (formData.technical_role) {
-      //   bodyData.append('technical_role', formData.technical_role);
-      // }
-      // if (formData.openToWork) {
-      //   bodyData.append('openToWork', formData.openToWork);
-      // }
-      // if (formData.linkedin) {
-      //   bodyData.append('linkedin', formData.linkedin);
-      // }
-      // if (formData.github) {
-      //   bodyData.append('github', formData.github);
-      // }
-      // if (formData.about) {
-      //   bodyData.append('about', formData.about);
-      // }
+      
       if (formData.photo) {
         bodyData.append('photo', formData.photo);
       }
 
-      // console.log("bodyData === ", bodyData);
+     
       fetch(`${import.meta.env.VITE_API_URL}/developers/auth/register`, {
         method: 'POST',
         // when working with multipart/form-data, the browser automatically sets the appropriate Content-Type header, so you don't need to manually set it.
@@ -292,7 +232,7 @@ function RegisterDeveloper() {
         .then(async (data) => {
           await setProgress(70);
 
-          // console.log('POSTED --> ', data);
+        
           if (!data.data) {
             await setProgress(100);
             // return is imp so that it doesnt go again in catch block and update the toast again
@@ -302,7 +242,7 @@ function RegisterDeveloper() {
           }
           if (data.data.access_token) {
             await setProgress(100);
-            // console.log("token is ", data.data.access_token);
+          
             localStorage.setItem("authToken", data.data.access_token);
             localStorage.setItem('isDev', data.data.developer._id);
             localStorage.setItem('dev_uid', data.data.developer.uid);

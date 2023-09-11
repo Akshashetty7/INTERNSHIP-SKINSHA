@@ -13,12 +13,11 @@ export default function ProjectAdd() {
     title: "",
     description: "",
     photo: null,
-    // required_personnel: "",
+   
     open: false,
     proj_organization: localStorage.getItem("isOrg"),
   });
-  // console.log("Form data ---- ", formData);
-
+ 
   const patchORG = (projId, projMessage) => {
     fetch(
       `${import.meta.env.VITE_API_URL}/organizations/${localStorage.getItem(
@@ -48,8 +47,7 @@ export default function ProjectAdd() {
         )
           .then((response) => response.json())
           .then((data) => {
-            // console.log("Done patching ----", data);
-            // alert(`${projMessage} Also ${data.message}`);
+            
             toast.success(`${projMessage} Also ${data.message}`, {
               position: toast.POSITION.TOP_CENTER,
               autoClose: 2000,

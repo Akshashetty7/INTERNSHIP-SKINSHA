@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import DeveloperList from "../components/DeveloperList";
 import FilterButton from "../components/navbar/FilterButton";
-// import loading from '/SVG/loading.svg';
+
 import loading from "../../public/SVG/loading.svg";
 import Search from "../components/navbar/Search";
 
@@ -39,8 +39,7 @@ function DevelopersListing() {
       );
       const fetchedDevelopers = await response.json();
       setDevelopers(fetchedDevelopers.data);
-      // console.log('fetch Developers------------', fetchedDevelopers.data);
-      // console.log('fetch Developers------------', developers);
+     
     };
     fetchDevelopers();
   }, [searchInput]);
@@ -52,9 +51,7 @@ function DevelopersListing() {
       {/* ------------- Headings ------------ */}
 
       <div className="gap-0 z-[1] mt-5">
-        {/* <h1 className=" text-gray-900 text-center text-3xl md:text-4xl font-semibold">
-          Discover Best People to Hire!
-        </h1> */}
+        
         <h1 className="  yellow-gradient text-center text-3xl md:text-4xl font-semibold">
           Discover  Users
         </h1>
@@ -65,10 +62,7 @@ function DevelopersListing() {
             <h1 className="text-2xl text-start font-medium text-slate-800 px-5 my-2">
               List of Users
             </h1>
-            {/* <div className="tabs">
-              <a className="tab tab-bordered tab-active ">Best Matches</a>
-              <a className="tab">Saved Jobs</a>
-            </div> */}
+           
 
             {/* --------sort button--------- */}
             <FilterButton filters={filters} setDevelopers={setDevelopers} />

@@ -11,9 +11,9 @@ import {
   BsGithub, BsLinkedin, BsGlobe, BsFillCalendarEventFill,
 } from 'react-icons/bs';
 import { IoTrashBinOutline } from 'react-icons/io5';
-// import { useParams } from 'react-router-dom';
+
 import { Link } from 'react-router-dom';
-// import { LuEdit } from 'react-icons/lu';
+
 import UpdateModal from './UpdateModal';
 import CompanyDetails from '../CompanyDetails';
 import CompanyUpdateModal from './CompanyUpdateModal';
@@ -32,7 +32,7 @@ export default function Profile() {
   const [deleteBtn, setDeleteBtn] = useState(false);
   const [reviewVaulOpen, setReviewVaulOpen] = useState(false);
 
-  // console.log("reviewVaulOpen ---> ", reviewVaulOpen);
+ 
   // need this state variable to keep track of the uid got from edit and delete button click
   const [selectedUID, setSelectedUID] = useState([]);
 
@@ -52,8 +52,7 @@ export default function Profile() {
 
   const fetchProposals = async () => {
     // The developerRef.current will always have the most recent value of developer without triggering a re-render.
-    // console.log("current is ------", developerRef.current._id);
-    // const url = `?developer=${developerRef.current._id}`;
+    
     const url = `?developer=${localStorage.getItem('isDev')}`;
     const response = await fetch(
       `${import.meta.env.VITE_API_URL}/proposals${url}`,
@@ -64,8 +63,7 @@ export default function Profile() {
     );
     const fetched = await response.json();
     setProposals(fetched.data);
-    // console.log('fetched ------------>', fetched.data);
-    // console.log('proposals>>>>>>>>>', proposalsRef.current);
+    
   };
 
   // fetching profile based on current logged in user type i.e. developer or organization
@@ -101,7 +99,7 @@ export default function Profile() {
       setOrganization(fetched.data[0]);
       await setProgress(100);
     }
-    // console.log('fetched info------------', fetched.data[0]);
+   
   };
 
   const fetchHistory = async () => {
@@ -111,7 +109,7 @@ export default function Profile() {
     );
     const fetched = await response.json();
     await setProjectHistory(fetched.data);
-    // console.log('fetched info------------', fetched.data);
+   
   };
 
   useEffect(() => {
@@ -183,17 +181,6 @@ export default function Profile() {
               fetchProfile={fetchProfile}
             />
 
-            {/* {isOpen ? (
-              <BsPersonFillCheck
-                onClick={() => setIsOpen(!isOpen)}
-                className="absolute right-8 top-9 text-2xl text-accent hover:bg-accent/10 "
-              />
-            ) : (
-              <LuEdit
-                onClick={() => setIsOpen(!isOpen)}
-                className="absolute right-8 top-9 text-2xl text-accent hover:bg-accent/10 "
-              />
-            )} */}
 
             <div className="flex flex-col justify-between lg:pb-16 h-full  gap-3">
               {/* --------Developer Name------------------- */}
@@ -214,16 +201,7 @@ export default function Profile() {
           <div className="flex flex-col-reverse md:flex-row justify-start w-full items-start place-content-start">
             {/* ----------Col-1----------------*/}
             <div className="flex flex-col gap-6 px-5 py-7  mr-2  md:w-1/3">
-              {/* <div className="flex flex-col gap-2  ">
-                <h1 className="text-lg text-slate-900 font-medium">Role</h1>
-                <p className="description">{developer?.technical_role}</p>
-              </div> */}
-              {/* <div className="flex flex-col gap-2">
-                <h1 className="text-lg text-slate-900 font-medium">
-                  Education
-                </h1>
-                <p className="description">{developer?.qualification}</p>
-              </div> */}
+              
               <div className="flex flex-col gap-2">
                 <h1 className="text-lg text-slate-900 font-medium">Contact</h1>
                 <Link
@@ -240,203 +218,15 @@ export default function Profile() {
                   <FaPhone />
                   {developer?.phone}
                 </Link>
-                {/* <Link
-                  to={developer?.linkedin}
-                  target="_blank"
-                  className="contact-dev"
-                >
-                  <BsLinkedin />
-                  {developer?.linkedin}
-                </Link> */}
-                {/* <Link
-                  to={developer?.github}
-                  target="_blank"
-                  className="contact-dev"
-                >
-                  <BsGithub />
-                  {developer?.github}
-                </Link> */}
+                
               </div>
             </div>
-            {/* ----------Col-2----------------*/}
-            {/*   */}
+           
+           
           </div>
         </div>
-        {/* ---------------Proposals---------------- */}
-        {/* ---------!Make this div Visible only if dev has applied for proposals-------------- */}
+        
 
-
-{/* 
-        <div
-          className="flex w-full lg:w-3/5 md:w-4/5 flex-col justify-center
-            items-center border z-10 relative
-           border-slate-300 bg-white/50 rounded-2xl my-6 mb-10"
-        >
-          <h1 className="flex w-full pl-5 pt-6 capitalize justify-start text-2xl  font-semibold mb-5">
-            Your Project Proposals
-          </h1>
-          <div className="flex w-full flex-col pt-2">
-           
-            {proposals.length === 0 && (
-            <h3 className="text-lg lg:text-xl ms-5 font-semibold mb-3 text-slate-800">
-              No proposals found.
-            </h3>
-            )}
-            {proposals.map((proposal, i) => (
-
-              <div
-                key={i}
-                className="flex items-start justify-start border-t px-5 py-5 border-slate-300 "
-              >
-                <img
-                  alt="thumbnail"
-                  src={proposal.project.thumbnail}
-                  className="aspect-video w-1/3 lg:w-1/4 rounded-xl"
-                />
-
-                <div className="flex flex-col items-start pl-7  justify-start w-full text-slate-600">
-                
-                  <Link to={`/projects/${proposal.project.uid}`} className="text-lg lg:text-2xl font-semibold mb-3 text-slate-800">
-                    {proposal.project.title}
-                  </Link>
-                  <p className="text-sm lg:text-lg font-normal text-slate-600 mb-2">
-                    {proposal.project.uid}
-                  </p>
-                  <p className="text-sm lg:text-lg font-normal text-slate-600 mb-2">
-                    {proposal.organization.uid}
-                  </p>
-                 
-                  <span
-                   
-                    className={`border  px-2 py-1 bg-accent/5 text-sm rounded-2xl text-accent ${proposal.pending ? "bg-yellow-100 text-orange-600 border-orange-300" : proposal.accepted ? "bg-green-100 text-green-800 border-green-300" : "bg-red-100 text-red-800 border-red-300"}`}
-                  >
-                   
-                    {getStatusText(proposal)}
-                  </span>
-
-                </div>
-                
-                {selectedUID && deleteBtn && (
-                  <ConfirmationDialog
-                    cancel={() => setDeleteBtn(!deleteBtn)}
-                    deleteBtn={deleteBtn}
-                    setDeleteBtn={setDeleteBtn}
-                    propUid={selectedUID}
-                    onDeleteSuccess={handleDeleteSuccess}
-                  />
-                )}
-                <div className="flex gap-2">
-                  {proposal.accepted && (
-                  <ReviewVaul
-                    orgID={proposal.organization._id}
-                    proposalUID={proposal.uid}
-                    fetchProposals={fetchProposals}
-                    reviewVaulOpen={reviewVaulOpen}
-                    setReviewVaulOpen={setReviewVaulOpen}
-                  >
-                    <button
-                      type="button"
-                      className={`flex text-accent text-2xl bg-indigo-50 hover:bg-accent hover:text-white p-2 md:p-3 rounded-xl relative ${proposal.reviewedByDev ? 'opacity-50 cursor-not-allowed' : ''}`}
-                      disabled={proposal.reviewedByDev}
-                      onClick={() => setReviewVaulOpen(true)}
-                    >
-                      <p className="hidden md:flex  w-36 text-base">
-                        {proposal.reviewedByDev ? "Reviewed" : "Review Company"}
-                      </p>
-                      <MdReviews />
-                    </button>
-                  </ReviewVaul>
-                  )}
-                  <button
-                    type="button"
-                    onClick={() => deleteProposal(proposal.uid)}
-                    className="text-red-500 text-2xl bg-red-50 hover:bg-red-500 hover:text-white p-2 md:p-3 rounded-xl"
-                  >
-                    <IoTrashBinOutline />
-                  </button>
-
-                </div>
-              </div>
-
-            ))}
-          </div>
-        </div> */}
-{/*        
-        <div
-          className="flex w-full lg:w-3/5 md:w-4/5 flex-col justify-center
-            items-center border z-10 relative
-           border-slate-300  bg-white/50 rounded-2xl my-6 mb-10"
-        >
-          <div className="flex flex-col  pt-7 relative w-full">
-            <h1 className="text-2xl px-5 font-semibold mb-6">Project History</h1>
-            <div className={` absolute px-5 -top-3 -right-5 md:right-0  md:top-0 `}>
-              <ProjectHistoryAdd fetchHistory={fetchHistory} />
-            </div>
-
-            
-            {projectHistory.length === 0 && (
-            <h2 className="text-xl px-5 py-5">
-              No projects in your Project History. Please add some projects
-            </h2>
-
-            )}
-            {projectHistory.length > 0 && projectHistory.map((project) => (
-              <div key={project.uid} className="flex flex-row justify-between border-t px-5 py-5 border-slate-300 relative">
-                <div>
-
-                 
-                  <h2 className="text-xl font-semibold mb-2">
-                    {project.title}
-                  </h2>
-                 
-                  <div className="flex place-content-start items-center w-[200%] text-slate-600 gap-1">
-                    <p className="flex  w-[56%] mb-3">
-                      <BsFillCalendarEventFill className="mr-[5%]" />
-                      {project.startDate}
-                    &nbsp;to&nbsp;
-                      {project.endDate}
-                    </p>
-                  </div>
-                  <Link
-                    to={project?.link}
-                    target="_blank"
-                    className="contact-dev"
-                  >
-                    <BsGlobe />
-                    {project?.link}
-                  </Link>
-                  <p className="description">
-                    {project.description}
-                  </p>
-                </div>
-                <div>
-                 
-                  {selectedUID && deleteBtn && (
-
-                    <ConfirmationDialog
-                      cancel={() => setDeleteBtn(!deleteBtn)}
-                      deleteBtn={deleteBtn}
-                      setDeleteBtn={setDeleteBtn}
-                      propUid={selectedUID}
-                      onDeleteSuccess={handleDeleteSuccess}
-                    />
-
-                  )}
-                  <div className="flex gap-2">
-                    <ProjectHistoryEdit fetchHistory={fetchHistory} projectUID={project.uid} />
-                    <button
-                      type="button"
-                      onClick={() => deleteProject(project.uid)}
-                      className="order-2 text-red-500 text-2xl bg-red-50 hover:bg-red-500 hover:text-white p-2 md:p-3 rounded-xl"
-                    >
-                      <IoTrashBinOutline />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div> */}
       </div>
     );
   }

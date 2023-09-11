@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { RxAvatar } from "react-icons/rx";
 import { MdOutlineLogout } from "react-icons/md";
-// import { IoMdLogIn } from "react-icons/io";
+
 
 function UserLogin() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,13 +11,13 @@ function UserLogin() {
   let devToken = localStorage.getItem("isDev");
   let devUid = localStorage.getItem("dev_uid");
   const logOut = () => {
-    // console.log('yoooooo');
+    
     localStorage.removeItem("authToken");
-    // eslint-disable-next-line no-unused-expressions
+    
     orgToken ? localStorage.removeItem("isOrg") : null;
-    // eslint-disable-next-line no-unused-expressions
+    
     devToken ? localStorage.removeItem("isDev") : null;
-    // eslint-disable-next-line no-unused-expressions
+   
     devUid ? localStorage.removeItem("dev_uid") : null;
 
     token = null;
@@ -25,7 +25,7 @@ function UserLogin() {
     devToken = null;
     devUid = null;
   };
-  // console.log('token is -----', token);
+  
   return (
     <div className="flex items-center justify-end px-4">
       <div className="inline-block items-center relative text-left">

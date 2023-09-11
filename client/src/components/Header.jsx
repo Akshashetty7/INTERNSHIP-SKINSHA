@@ -5,7 +5,7 @@ import UserLogin from './navbar/UserLogin';
 
 function Header() {
   // Header Sticky
-  // eslint-disable-next-line no-unused-vars
+  
   const [navbar, setNavbar] = useState(false);
 
   const changeBackground = () => {
@@ -21,7 +21,7 @@ function Header() {
   }, []);
 
   return (
-  // <div className={navbar ? 'header bg-white' : 'header bg-transparent'}>
+  
     <div className="header bg-white">
       <div className="flex w-full justify-between relative items-center">
         <Logo />

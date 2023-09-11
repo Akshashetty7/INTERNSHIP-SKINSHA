@@ -24,17 +24,6 @@ function Hero() {
         <div className="gradient   bg-yellow-900" />
       </div>
 
-      {/* ------------- Milestone ------------ */}
-
-      {/* <div
-        className="flex flex-row px-2 border items-center justify-center animate-bounce border-accent rounded-full text-gray-700 text-md z-10"
-      >
-        <MdCelebration className="mr-2" />
-        More than
-        {' '}
-        {projects.length}
-        + projects on the platform.
-      </div> */}
 
       {/* ------------- Headings ------------ */}
 
@@ -43,9 +32,7 @@ function Hero() {
          WELCOME TO THE SKIN-SHA UNIVERSE
         </h1>
         
-        {/* <h1 className=" blue-gradient text-center text-3xl md:text-3xl font-semibold  text-yellow-800">
-        DISCOVER YOUR BEST SKIN EVER
-        </h1> */}
+        
       </div>
 
       {/* ------------- SubHeading ------------ */}
@@ -64,18 +51,6 @@ function Hero() {
           </a>
         </div>
 
-        {/* ------------- Demo Video ------------ */}
-
-        {/* <a
-          href="/"
-          className="flex p-0 gap-3 items-center justify-center"
-        >
-          <AiFillPlayCircle className="text-accent text-5xl md:text-6xl animate-pulse" />
-          <div className="flex flex-col">
-            <p className="text-accent">Watch demo</p>
-            <p>2 min</p>
-          </div>
-        </a> */}
       </div>
       {/* ------------- Screenshots ------------ */}
 

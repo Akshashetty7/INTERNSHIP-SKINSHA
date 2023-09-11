@@ -1,4 +1,4 @@
-/* eslint-disable camelcase */
+
 import React from "react";
 import { BsFillBookmarkPlusFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
@@ -19,14 +19,10 @@ const ProjectList = ({ projectsProp = [] }) => {
       uid,
       title,
       description,
-      timeframe,
+     
       thumbnail,
-      project_type,
-      required_personnel,
-      //   featured,
-      //   board,
-      //   techstack,
-      //   fixed_price,
+      
+      
     } = projects;
 
     return (
@@ -40,11 +36,7 @@ const ProjectList = ({ projectsProp = [] }) => {
         >
           <div className="flex flex-col lg:flex-row w-full gap-6 items-center relative   bg-[#fff7ed]">
             <BsFillBookmarkPlusFill className="text-white lg:text-accent absolute w-7 h-7 top-2 border-spacing-4 right-3 z-30 hover:text-accent/30 drop-shadow-xl drop-shadow-white" />
-            {/* <img
-              src={thumbnail}
-              className="flex place-content-start items-start w-full aspect-video  h-48 object-cover rounded-lg"
-              alt={title}
-            /> */}
+            
             <img
               src={thumbnail}
               alt=""
@@ -55,24 +47,7 @@ const ProjectList = ({ projectsProp = [] }) => {
 
               <p className="text-sm text-slate-600">Posted by Google</p>
               <div className="flex my-5">
-                {/* <div className="flex flex-col w-1/2 items-start justify-start gap-3">
-                  <div>
-                    <h3 className="listing-content-data">{timeframe}</h3>
-                    <h4 className="listing-content-constant">Duration</h4>
-                  </div>
-                  <div>
-                    <h3 className="listing-content-data">
-                      {required_personnel}
-                    </h3>
-                    <h4 className="listing-content-constant">Role</h4>
-                  </div>
-                </div> */}
-                {/* <div className="flex flex-col w-1/2 items-start justify-start gap-3">
-                  <div>
-                    <h3 className="listing-content-data">{project_type}</h3>
-                    <h4 className="listing-content-constant">Project Type</h4>
-                  </div>
-                </div> */}
+               
               </div>
             </div>
           </div>

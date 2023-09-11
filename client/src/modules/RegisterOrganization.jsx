@@ -5,7 +5,7 @@ import Stepper from '../components/form/register/Stepper';
 import StepperControl from '../components/form/register/StepperControl';
 import { UseContextProvider } from '../components/form/register/StepperContext';
 import FormContainer from '../components/form/FormContainer';
-// import organization from '/organization.svg';
+
 import organization from '../../public/organization.svg';
 import OrgAccount from '../components/form/register/organization/OrgAccount';
 import OrgInfo from '../components/form/register/organization/OrgInfo';
@@ -111,9 +111,7 @@ function RegisterOrganization() {
 
   const handleClick = async (direction) => {
     let newStep = currentStep;
-    // console.log('newstep---', newStep);
-    // console.log('lenght?------', steps.length);
-
+   
     // --- POST if the you reach at the last step
     // means when 3 === 3
     // and when back button is not clicked otherwise even for back button click, network calls will be made.
@@ -132,7 +130,7 @@ function RegisterOrganization() {
         toast.error(`${errorMessage}`, {
           position: toast.POSITION.TOP_CENTER, autoClose: 10000,
         });
-        // setShowModal(!showModal);
+        
         return;
       }
 

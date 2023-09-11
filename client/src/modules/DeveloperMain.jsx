@@ -31,7 +31,7 @@ function DeveloperMain() {
     );
     const fetchedDeveloper = await response.json();
     setDeveloper(fetchedDeveloper.data);
-    // console.log('fetch Developer------------', fetchedDeveloper.data);
+    
 
     // fetching the developer's project history with his _id recieved from response.
     fetchHistory(fetchedDeveloper.data._id);
@@ -45,7 +45,7 @@ function DeveloperMain() {
       .then((fetched) => {
         // FILTERING those reviews which were posted by Organization for developer.
         const filteredData = fetched.data.filter((doc) => doc.reviewedByOrg === true);
-        // console.log("filtered is ", filteredData);
+      
         setReviews(filteredData);
       });
   };
