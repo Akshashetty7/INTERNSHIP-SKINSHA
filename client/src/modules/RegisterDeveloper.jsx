@@ -115,13 +115,7 @@ function RegisterDeveloper() {
     } else if (field === "phone") {
       validatePhone(value);
     }
-    //  else if (field === "skills") {
-    //   validateSkills(value);
-    // } else if (field === "linkedin") {
-    //   validateLinkedin(value);
-    // } else if (field === "github") {
-    //   validateGithub(value);
-    // }
+    
   };
 
   const steps = ['Login Details', 'Personal Details','Review'];

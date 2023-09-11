@@ -5,7 +5,6 @@
 import { useEffect, useState } from "react";
 import CompanyList from "../components/CompanyList";
 import FilterButton from "../components/navbar/FilterButton";
-// import loading from "../../../../../../../../SVG/loading.svg";
 import loading from "../../public/SVG/loading.svg";
 import Search from "../components/navbar/Search";
 

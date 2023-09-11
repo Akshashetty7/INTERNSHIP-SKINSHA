@@ -27,8 +27,7 @@ function App() {
   const progressState = useContext(loadingContext);
   const { progress } = progressState;
 
-  // console.log("env : ", import.meta.env.VITE_API_URL);
-  // console.log("env : ", process.env.REACT_APP_API_URL);
+  
   return (
     <>
       <LoadingBar color="#6c47ff" height={10} progress={progress} />

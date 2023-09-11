@@ -26,10 +26,7 @@ const filters = [
     label: "Sort Z-A",
     property: "#proj_sort_dsc",
   },
-  // {
-  //   label: "Open to work",
-  //   property: "#open_for_development",
-  // },
+ 
 ];
 
 function ProjectListings() {

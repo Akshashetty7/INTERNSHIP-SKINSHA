@@ -23,24 +23,17 @@ const projectSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    techStack: {
-      type: String,
-    },
+    
     featured: {
       type: Boolean,
       default: false,
     },
-    board: {
-      type: String,
-      default: "Scrum", // like agile, kanban
-    },
+   
     thumbnail: {
       type: String,
       default: "https://res.cloudinary.com/dulptytgu/image/upload/v1689547610/vdgzaagklqgqjpnzlyyl.jpg",
     },
-    timeframe: {
-      type: String,
-    },
+   
     lead: {
       // would need to send "_id" value for this field as populate query in the routes function based on objectId
       type: mongoose.Schema.Types.ObjectId,
@@ -50,13 +43,7 @@ const projectSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "organizations",
     },
-    hourly_rate: {
-      type: Number,
-    },
-    fixed_price: {
-      type: Number,
-    },
-    // sending multiple references in an array for onne to many relation kinda thing.
+    
     reviews: [{
       type: mongoose.Schema.Types.ObjectId,
       ref: "reviews",
@@ -70,9 +57,7 @@ const projectSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "developers",
     }],
-    project_type: { // one-time/monthly/yearly
-      type: String,
-    },
+    
     required_personnel: { // like entry-level/exprerienced
       type: String,
     },
@@ -80,14 +65,9 @@ const projectSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "developers",
     }],
-    open: { // open for development ?
-      type: Boolean,
-      default: true,
-    },
+   
   },
-  {
-    timestamps: true, // to create created_at & updated_at fields
-  },
+  
 );
 
 // mongoose.model takes 2 arguments

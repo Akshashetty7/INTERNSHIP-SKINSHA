@@ -4,17 +4,9 @@ import Footer from "../components/Footer";
 const links = [
   { name: "Categories", href: "/projects" },
   { name: "Brand List", href: "/companies" },
-  // in aboutsection removed
   
-  // { name: "Our Developers", href: "/developers" },
-  // { name: "Meet our leadership", href: "#" },
 ];
-const stats = [
-  // { name: "Companies Who Trust Us", value: "1200+" },
-  // { name: "Full-time Developers", value: "3000+" },
-  // { name: "Hours per week", value: "40" },
-  // { name: "Earning Potential", value: "Unlimited" },
-];
+
 
 export default function AboutUs() {
   return (

@@ -24,10 +24,7 @@ const organizationSchema = new mongoose.Schema(
     website: {
       type: String,
     },
-    domain: {
-      type: String,
-    },
-    // sending multiple references in an array for onne to many relation kinda thing.
+    
     org_projects: [{
       // would need to send "_id" value for this field as populate query in the routes function based on objectId
       type: mongoose.Schema.Types.ObjectId,
@@ -42,9 +39,7 @@ const organizationSchema = new mongoose.Schema(
       required: true,
     },
   },
-  {
-    timestamps: true,
-  },
+  
 );
 
 // mongoose.model takes 2 arguments
