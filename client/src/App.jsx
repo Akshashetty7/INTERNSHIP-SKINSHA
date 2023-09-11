@@ -44,8 +44,8 @@ function App() {
           <Route path="/companies/:uid" element={<CompanyMain />} />
           {/* -------------Company Profile----------------- */}
           <Route path="/companies/:id" element={<CompanyMain />} />
-          <Route path="/developers" element={<DevelopersListing />} />
-          <Route path="/developers/:uid" element={<DeveloperMain />} />
+          {/* <Route path="/developers" element={<DevelopersListing />} />
+          <Route path="/developers/:uid" element={<DeveloperMain />} /> */}
 
           {/* -------------Dev Profile----------------- */}
           <Route path="/profile" element={<Profile />} />

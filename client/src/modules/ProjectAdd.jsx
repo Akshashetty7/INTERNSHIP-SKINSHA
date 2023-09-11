@@ -13,11 +13,11 @@ export default function ProjectAdd() {
     title: "",
     description: "",
     photo: null,
-   
+
     open: false,
     proj_organization: localStorage.getItem("isOrg"),
   });
- 
+
   const patchORG = (projId, projMessage) => {
     fetch(
       `${import.meta.env.VITE_API_URL}/organizations/${localStorage.getItem(
@@ -47,7 +47,6 @@ export default function ProjectAdd() {
         )
           .then((response) => response.json())
           .then((data) => {
-            
             toast.success(`${projMessage} Also ${data.message}`, {
               position: toast.POSITION.TOP_CENTER,
               autoClose: 2000,
@@ -104,7 +103,7 @@ export default function ProjectAdd() {
     fetch(`${import.meta.env.VITE_API_URL}/projects`, {
       method: "POST",
       headers: {
-        authorization: `Bearer ${localStorage.getItem("authToken")}`,
+        authorization: localStorage.getItem("authToken"),
       },
       body: bodyData,
     })
